@@ -1,8 +1,19 @@
 .card {
-    width: 65%;
-    margin: 1rem auto;
+    width: 90%;
+    margin: auto;
     background-color: rgb(235, 235, 235);
 }
+
+.mat-card-header {
+    text-align: center;
+}
+
 img {
-    height: 15rem;
+
+    height: 20rem;
+    width: auto;
+    /* width: 65%;
+    justify-content: center;
+    align-items: center; */
+    
 }
