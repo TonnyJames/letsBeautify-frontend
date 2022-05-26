@@ -18,25 +18,27 @@ import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-
 import { TecnicoUpdateComponent } from './components/tecnico/tecnico-update/tecnico-update.component';
 
 const routes: Routes = [
-  {path: 'login',                   component: LoginComponent},
-  {
-    path: '',                       component: NavComponent, canActivate: [AuthGuard], children: [
-      { path: 'home',               component: HomeComponent },
 
-      {path: 'tecnicos',            component: TecnicoListComponent },
-      {path: 'tecnicos/create',     component: TecnicoCreateComponent },
-      {path: 'tecnicos/update/:id', component: TecnicoUpdateComponent },
-      {path: 'tecnicos/delete/:id', component: TecnicoDeleteComponent },
 
-      {path: 'cliente',             component: ClienteListComponent },
-      {path: 'cliente/create',      component: ClienteCreateComponent },
-      {path: 'cliente/update/:id',  component: ClienteUpdateComponent },
-      {path: 'cliente/delete/:id',  component: ClienteDeleteComponent },
+      { path: 'login', component: LoginComponent },
+      
+      {path: '', component: NavComponent, canActivate: [AuthGuard], children: [
+      { path: 'home', component: HomeComponent },
 
-      {path: 'chamados',            component: ChamadoListComponent },
-      {path: 'chamados/create',     component: ChamadoCreateComponent },
-      {path: 'chamados/update:id',     component: ChamadoUpdateComponent },
-      {path: 'chamados/read/:id',     component: ChamadoReadComponent}
+      { path: 'tecnicos', component: TecnicoListComponent },
+      { path: 'tecnicos/create', component: TecnicoCreateComponent },
+      { path: 'tecnicos/update/:id', component: TecnicoUpdateComponent },
+      { path: 'tecnicos/delete/:id', component: TecnicoDeleteComponent },
+
+      { path: 'cliente', component: ClienteListComponent },
+      { path: 'cliente/create', component: ClienteCreateComponent },
+      { path: 'cliente/update/:id', component: ClienteUpdateComponent },
+      { path: 'cliente/delete/:id', component: ClienteDeleteComponent },
+
+      { path: 'chamados', component: ChamadoListComponent },
+      { path: 'chamados/create', component: ChamadoCreateComponent },
+      { path: 'chamados/update:id', component: ChamadoUpdateComponent },
+      { path: 'chamados/read/:id', component: ChamadoReadComponent }
     ]
   }
 ];
