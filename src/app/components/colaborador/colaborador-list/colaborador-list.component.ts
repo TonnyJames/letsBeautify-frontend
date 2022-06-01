@@ -13,7 +13,7 @@ export class ColaboradorListComponent implements OnInit {
   
   ELEMENT_DATA: Colaborador[] = []
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'acoes'];
+  displayedColumns: string[] = ['id', 'nome', 'cpf', 'email', 'acoes'];
   dataSource = new MatTableDataSource<Colaborador>(this.ELEMENT_DATA);
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
