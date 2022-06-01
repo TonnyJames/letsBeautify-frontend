@@ -29,14 +29,14 @@ import { MatCardModule } from '@angular/material/card';
 import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
-import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-list.component';
+import { ColaboradorListComponent } from './components/colaborador/colaborador-list/colaborador-list.component';
 import { LoginComponent } from './components/login/login.component';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
-import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecnico-create.component';
+import { ColaboradorCreateComponent } from './components/colaborador/colaborador-create/colaborador-create.component';
 import { NgxMaskModule } from 'ngx-mask';
-import { TecnicoUpdateComponent } from './components/tecnico/tecnico-update/tecnico-update.component';
-import { TecnicoDeleteComponent } from './components/tecnico/tecnico-delete/tecnico-delete.component';
+import { ColaboradorUpdateComponent } from './components/colaborador/colaborador-update/colaborador-update.component';
+import { ColaboradorDeleteComponent } from './components/colaborador/colaborador-delete/colaborador-delete.component';
 import { ClienteCreateComponent } from './components/cliente/cliente-create/cliente-create.component';
 import { ClienteDeleteComponent } from './components/cliente/cliente-delete/cliente-delete.component';
 import { ClienteListComponent } from './components/cliente/cliente-list/cliente-list.component';
@@ -52,11 +52,11 @@ import { ChamadoReadComponent } from './components/chamado/chamado-read/chamado-
     NavComponent,
     HomeComponent,
     HeaderComponent,
-    TecnicoListComponent,
+    ColaboradorListComponent,
     LoginComponent,
-    TecnicoCreateComponent,
-    TecnicoUpdateComponent,
-    TecnicoDeleteComponent,
+    ColaboradorCreateComponent,
+    ColaboradorUpdateComponent,
+    ColaboradorDeleteComponent,
 
     ClienteCreateComponent,
     ClienteDeleteComponent,

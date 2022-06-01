@@ -2,17 +2,17 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Tecnico } from 'src/app/models/tecnico';
-import { TecnicoService } from 'src/app/services/tecnico.service';
+import { Colaborador } from 'src/app/models/colaborador';
+import { ColaboradorService } from 'src/app/services/colaborador.service';
 
 @Component({
-  selector: 'app-tecnico-delete',
-  templateUrl: './tecnico-delete.component.html',
-  styleUrls: ['./tecnico-delete.component.css']
+  selector: 'app-colaborador-delete',
+  templateUrl: './colaborador-delete.component.html',
+  styleUrls: ['./colaborador-delete.component.css']
 })
-export class TecnicoDeleteComponent implements OnInit {
+export class ColaboradorDeleteComponent implements OnInit {
 
-  tecnico: Tecnico = {
+  colaborador: Colaborador = {
     id: '',
     nome: '',
     cpf: '',
@@ -23,27 +23,27 @@ export class TecnicoDeleteComponent implements OnInit {
   }
 
   constructor(
-    private service: TecnicoService,
+    private service: ColaboradorService,
     private toast: ToastrService,
     private router: Router,
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.tecnico.id = this.route.snapshot.paramMap.get('id');
+    this.colaborador.id = this.route.snapshot.paramMap.get('id');
     this.findById();
   }
   
   findById(): void{
-    this.service.findById(this.tecnico.id).subscribe(resposta =>{
+    this.service.findById(this.colaborador.id).subscribe(resposta =>{
       resposta.perfis = []
-      this.tecnico =  resposta;
+      this.colaborador =  resposta;
     })
   }
 
   delete(): void {
-    this.service.delete(this.tecnico.id).subscribe(() => {
+    this.service.delete(this.colaborador.id).subscribe(() => {
       this.toast.success('Técnico deletado com sucesso', 'Delete');
-      this.router.navigate(['tecnicos'])
+      this.router.navigate(['colaboradores'])
     }), ex => {
       if(ex.error.errors){
         ex.error.errors.fotEach(element =>{

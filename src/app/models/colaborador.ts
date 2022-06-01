@@ -1,4 +1,4 @@
-export interface Tecnico {
+export interface Colaborador {
     id?: any;
     nome: string;
     cpf: string;

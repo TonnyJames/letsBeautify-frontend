@@ -4,10 +4,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Chamado } from 'src/app/models/chamado';
 import { Cliente } from 'src/app/models/cliente';
-import { Tecnico } from 'src/app/models/tecnico';
+import { Colaborador } from 'src/app/models/colaborador';
 import { ChamadoService } from 'src/app/services/chamado.service';
 import { ClienteService } from 'src/app/services/cliente.service';
-import { TecnicoService } from 'src/app/services/tecnico.service';
+import { ColaboradorService } from 'src/app/services/colaborador.service';
 
 @Component({
   selector: 'app-chamado-update',
@@ -16,17 +16,17 @@ import { TecnicoService } from 'src/app/services/tecnico.service';
 })
 export class ChamadoUpdateComponent implements OnInit {
   clientes: Cliente[] = []
-  tecnicos: Tecnico[] = []
+  colaboradors: Colaborador[] = []
   chamado: Chamado = {
 
     prioridade:  '',
     status:      '',
     titulo:      '',
     observacoes:   '',
-    tecnico:     '',
+    colaborador:     '',
     cliente:     '',
     nomeCliente: '',
-    nomeTecnico: ''
+    nomeColaborador: ''
   }
 
 
@@ -34,14 +34,14 @@ export class ChamadoUpdateComponent implements OnInit {
   status:     FormControl = new FormControl(null, [Validators.required])
   titulo:     FormControl = new FormControl(null, [Validators.required])
   observacoes:  FormControl = new FormControl(null, [Validators.required])
-  tecnico:    FormControl = new FormControl(null, [Validators.required])
+  colaborador:    FormControl = new FormControl(null, [Validators.required])
   cliente:    FormControl = new FormControl(null, [Validators.required])
 
 
   constructor(
     private chamadoService: ChamadoService,
     private clienteService: ClienteService,
-    private tecnicoService: TecnicoService,
+    private colaboradorService: ColaboradorService,
     private toastService:   ToastrService,
     private route:          ActivatedRoute,
     private router:         Router
@@ -51,7 +51,7 @@ export class ChamadoUpdateComponent implements OnInit {
     this.chamado.id = this.route.snapshot.paramMap.get('id');
     this.findById();
     this.findAllClientes;
-    this.findAllTecnicos;
+    this.findAllColaboradors;
   }
 
   findById(): void{
@@ -77,9 +77,9 @@ export class ChamadoUpdateComponent implements OnInit {
     })
   }
 
-  findAllTecnicos(): void {
-    this.tecnicoService.findAll().subscribe(resposta => {
-      this.tecnicos = resposta
+  findAllColaboradors(): void {
+    this.colaboradorService.findAll().subscribe(resposta => {
+      this.colaboradors = resposta
     })
   }
 
@@ -89,7 +89,7 @@ export class ChamadoUpdateComponent implements OnInit {
     && this.status.valid
     && this.titulo.valid
     && this.observacoes.valid
-    && this.tecnico.valid
+    && this.colaborador.valid
     && this.cliente.valid
   }
 

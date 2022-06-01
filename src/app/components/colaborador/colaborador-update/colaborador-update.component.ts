@@ -2,17 +2,17 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Tecnico } from 'src/app/models/tecnico';
-import { TecnicoService } from 'src/app/services/tecnico.service';
+import { Colaborador } from 'src/app/models/colaborador';
+import { ColaboradorService } from 'src/app/services/colaborador.service';
 
 @Component({
-  selector: 'app-tecnico-update',
-  templateUrl: './tecnico-update.component.html',
-  styleUrls: ['./tecnico-update.component.css']
+  selector: 'app-colaborador-update',
+  templateUrl: './colaborador-update.component.html',
+  styleUrls: ['./colaborador-update.component.css']
 })
-export class TecnicoUpdateComponent implements OnInit {
+export class ColaboradorUpdateComponent implements OnInit {
 
-  tecnico: Tecnico = {
+  colaborador: Colaborador = {
     id: '',
     nome: '',
     cpf: '',
@@ -30,13 +30,13 @@ export class TecnicoUpdateComponent implements OnInit {
   senha: FormControl = new FormControl(null, Validators.minLength(3));
 
   constructor(
-    private service: TecnicoService,
+    private service: ColaboradorService,
     private toast: ToastrService,
     private router: Router,
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.tecnico.id = this.route.snapshot.paramMap.get('id');
+    this.colaborador.id = this.route.snapshot.paramMap.get('id');
     this.findById();
   }
 
@@ -44,16 +44,16 @@ export class TecnicoUpdateComponent implements OnInit {
     return this.nome.valid && this.email.valid && this.cpf.valid && this.senha.valid
   }
   findById(): void{
-    this.service.findById(this.tecnico.id).subscribe(resposta =>{
+    this.service.findById(this.colaborador.id).subscribe(resposta =>{
       resposta.perfis = []
-      this.tecnico =  resposta;
+      this.colaborador =  resposta;
     })
   }
 
   update(): void {
-    this.service.update(this.tecnico).subscribe(() => {
-      this.toast.success('Técnico atualizado com sucesso', 'Update');
-      this.router.navigate(['tecnicos'])
+    this.service.update(this.colaborador).subscribe(() => {
+      this.toast.success('Colaborador atualizado com sucesso', 'Update');
+      this.router.navigate(['colaboradores'])
     }), ex => {
       if(ex.error.errors){
         ex.error.errors.fotEach(element =>{
@@ -66,14 +66,14 @@ export class TecnicoUpdateComponent implements OnInit {
   }
 
   addPerfil(perfil: any): void {
-    this.tecnico.perfis.push(perfil);
+    this.colaborador.perfis.push(perfil);
 
-    if (this.tecnico.perfis.includes(perfil)) {
-      this.tecnico.perfis.splice(this.tecnico.perfis.indexOf(perfil), 1);
-      console.log(this.tecnico.perfis);
+    if (this.colaborador.perfis.includes(perfil)) {
+      this.colaborador.perfis.splice(this.colaborador.perfis.indexOf(perfil), 1);
+      console.log(this.colaborador.perfis);
     } else {
-      this.tecnico.perfis.push(perfil);
-      console.log(this.tecnico.perfis);
+      this.colaborador.perfis.push(perfil);
+      console.log(this.colaborador.perfis);
     }
   }
 }

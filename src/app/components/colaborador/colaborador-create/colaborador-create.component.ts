@@ -2,17 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Tecnico } from 'src/app/models/tecnico';
-import { TecnicoService } from 'src/app/services/tecnico.service';
+import { Colaborador } from 'src/app/models/colaborador';
+import { ColaboradorService } from 'src/app/services/colaborador.service';
 
 @Component({
-  selector: 'app-tecnico-create',
-  templateUrl: './tecnico-create.component.html',
-  styleUrls: ['./tecnico-create.component.css']
+  selector: 'app-colaborador-create',
+  templateUrl: './colaborador-create.component.html',
+  styleUrls: ['./colaborador-create.component.css']
 })
-export class TecnicoCreateComponent implements OnInit {
+export class ColaboradorCreateComponent implements OnInit {
 
-  tecnico: Tecnico = {
+  colaborador: Colaborador = {
     id: '',
     nome: '',
     cpf: '',
@@ -30,7 +30,7 @@ export class TecnicoCreateComponent implements OnInit {
   senha: FormControl = new FormControl(null, Validators.minLength(3));
 
   constructor(
-    private service: TecnicoService,
+    private service: ColaboradorService,
     private toast: ToastrService,
     private router: Router) { }
 
@@ -42,9 +42,9 @@ export class TecnicoCreateComponent implements OnInit {
   }
 
   create(): void {
-    this.service.create(this.tecnico).subscribe(() => {
-      this.toast.success('Técnico cadastrado com sucesso', 'Cadastro');
-      this.router.navigate(['tecnicos'])
+    this.service.create(this.colaborador).subscribe(() => {
+      this.toast.success('Colaborador cadastrado com sucesso', 'Cadastro');
+      this.router.navigate(['colaboradores'])
     }), ex => {
       if(ex.error.errors){
         ex.error.errors.fotEach(element =>{
@@ -57,14 +57,14 @@ export class TecnicoCreateComponent implements OnInit {
   }
 
   addPerfil(perfil: any): void {
-    this.tecnico.perfis.push(perfil);
+    this.colaborador.perfis.push(perfil);
 
-    if (this.tecnico.perfis.includes(perfil)) {
-      this.tecnico.perfis.splice(this.tecnico.perfis.indexOf(perfil), 1);
-      console.log(this.tecnico.perfis);
+    if (this.colaborador.perfis.includes(perfil)) {
+      this.colaborador.perfis.splice(this.colaborador.perfis.indexOf(perfil), 1);
+      console.log(this.colaborador.perfis);
     } else {
-      this.tecnico.perfis.push(perfil);
-      console.log(this.tecnico.perfis);
+      this.colaborador.perfis.push(perfil);
+      console.log(this.colaborador.perfis);
     }
   }
 }

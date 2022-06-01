@@ -35,12 +35,12 @@
           </mat-form-field>
       </div>
 
-      <div class="tecnico">
+      <div class="colaborador">
         <mat-form-field class="full-width" appearance="outline">
             <mat-label>Selecione um técnico</mat-label>
-            <mat-select [formControl]="tecnico" required
-            [(ngModel)]="chamado.tecnico" name="tecnico">
-              <mat-option **ngFor="let tec of tecnicos" value="{{ tec.id }}">{{ tec.nome }}</mat-option>
+            <mat-select [formControl]="colaborador" required
+            [(ngModel)]="chamado.colaborador" name="colaborador">
+              <mat-option **ngFor="let tec of colaboradors" value="{{ tec.id }}">{{ tec.nome }}</mat-option>
             </mat-select>
           </mat-form-field>
       </div>
