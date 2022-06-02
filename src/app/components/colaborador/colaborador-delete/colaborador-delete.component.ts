@@ -42,7 +42,7 @@ export class ColaboradorDeleteComponent implements OnInit {
 
   delete(): void {
     this.service.delete(this.colaborador.id).subscribe(() => {
-      this.toast.success('Técnico deletado com sucesso', 'Delete');
+      this.toast.success('Profissional deletado com sucesso', 'Delete');
       this.router.navigate(['colaboradores'])
     }), ex => {
       if(ex.error.errors){
