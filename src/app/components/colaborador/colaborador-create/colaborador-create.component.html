@@ -6,7 +6,7 @@
 
         <section class="section">
             <mat-checkbox (click)="addPerfil(0)" class="margin" color="warn">Admin</mat-checkbox>
-            <mat-checkbox (click)="addPerfil(1)" class="margin" [checked]="true" color="warn">Cliente</mat-checkbox>
+            <mat-checkbox  class="margin" [disabled]="true" [checked]="true" color="warn">Cliente</mat-checkbox>
             <mat-checkbox (click)="addPerfil(2)" class="margin" color="warn">Profissional</mat-checkbox>
           </section>
 

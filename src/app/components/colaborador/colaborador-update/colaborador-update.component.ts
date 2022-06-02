@@ -52,7 +52,7 @@ export class ColaboradorUpdateComponent implements OnInit {
 
   update(): void {
     this.service.update(this.colaborador).subscribe(() => {
-      this.toast.success('Colaborador atualizado com sucesso', 'Update');
+      this.toast.success('Cadastro atualizado com sucesso', 'Atualização');
       this.router.navigate(['colaboradores'])
     }), ex => {
       if(ex.error.errors){
@@ -66,8 +66,6 @@ export class ColaboradorUpdateComponent implements OnInit {
   }
 
   addPerfil(perfil: any): void {
-    this.colaborador.perfis.push(perfil);
-
     if (this.colaborador.perfis.includes(perfil)) {
       this.colaborador.perfis.splice(this.colaborador.perfis.indexOf(perfil), 1);
       console.log(this.colaborador.perfis);

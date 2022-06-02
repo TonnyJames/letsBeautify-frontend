@@ -55,8 +55,6 @@ export class ColaboradorCreateComponent implements OnInit {
   }
 
   addPerfil(perfil: any): void {
-    this.colaborador.perfis.push(perfil);
-
     if (this.colaborador.perfis.includes(perfil)) {
       this.colaborador.perfis.splice(this.colaborador.perfis.indexOf(perfil), 1);
       console.log(this.colaborador.perfis);
