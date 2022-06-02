@@ -1,13 +1,13 @@
 <div class="container mat-elevation-z8">
     <form action="" class="form">
-        <h1 class="fullwidth">Cadastrar Técnico</h1>
-        <img class="fullwidth" src="assets/img/faders.png" alt="image-create">
+        <h1 class="fullwidth">Cadastrar Profissional</h1>
+        <!-- <img class="fullwidth" src="assets/img/faders.png" alt="image-create"> -->
 
 
         <section class="section">
             <mat-checkbox (click)="addPerfil(0)" class="margin" color="warn">Admin</mat-checkbox>
             <mat-checkbox (click)="addPerfil(1)" class="margin" [checked]="true" color="warn">Cliente</mat-checkbox>
-            <mat-checkbox (click)="addPerfil(2)" class="margin" color="warn">Técnico</mat-checkbox>
+            <mat-checkbox (click)="addPerfil(2)" class="margin" color="warn">Profissional</mat-checkbox>
           </section>
 
           <p>
@@ -19,7 +19,7 @@
               [formControl] = "nome"
               required
               matInput placeholder="Fulano de tal..."
-              maxlength="50"
+              maxlength="70"
               >
               <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
             </mat-form-field>
@@ -34,7 +34,6 @@
               required
               matInput placeholder="123.456.789-10"
               mask="000.000.000.00">
-              >
               <mat-icon matSuffix>pin</mat-icon>
             </mat-form-field>
           </p>
@@ -71,5 +70,5 @@
           </p>
     </form>
 
-    <p class="fullwidth">by Tonny James</p>
+    <p class="fullwidth sign">by Tonny James</p>
 </div>

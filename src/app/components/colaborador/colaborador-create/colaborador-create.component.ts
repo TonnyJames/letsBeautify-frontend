@@ -22,8 +22,6 @@ export class ColaboradorCreateComponent implements OnInit {
     dataCriacao: ''
   }
 
-
-
   nome: FormControl = new FormControl(null, Validators.minLength(3));
   cpf: FormControl = new FormControl(null, Validators.required);
   email: FormControl = new FormControl(null, Validators.email);
@@ -37,23 +35,23 @@ export class ColaboradorCreateComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  validaCampos(): boolean {
-    return this.nome.valid && this.email.valid && this.cpf.valid && this.senha.valid
-  }
-
   create(): void {
     this.service.create(this.colaborador).subscribe(() => {
       this.toast.success('Colaborador cadastrado com sucesso', 'Cadastro');
       this.router.navigate(['colaboradores'])
-    }), ex => {
+    }, ex => {
       if(ex.error.errors){
-        ex.error.errors.fotEach(element =>{
+        ex.error.errors.fotEach(element => {
           this.toast.error(element.message);
         });
       }else {
         this.toast.error(ex.error.message);
       }
-    }
+    })
+  }
+
+  validaCampos(): boolean {
+    return this.nome.valid && this.email.valid && this.cpf.valid && this.senha.valid
   }
 
   addPerfil(perfil: any): void {
