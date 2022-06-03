@@ -30,10 +30,10 @@ const routes: Routes = [
       { path: 'colaboradores/update/:id', component: ColaboradorUpdateComponent },
       { path: 'colaboradores/delete/:id', component: ColaboradorDeleteComponent },
 
-      { path: 'cliente', component: ClienteListComponent },
-      { path: 'cliente/create', component: ClienteCreateComponent },
-      { path: 'cliente/update/:id', component: ClienteUpdateComponent },
-      { path: 'cliente/delete/:id', component: ClienteDeleteComponent },
+      { path: 'clientes', component: ClienteListComponent },
+      { path: 'clientes/create', component: ClienteCreateComponent },
+      { path: 'clientes/update/:id', component: ClienteUpdateComponent },
+      { path: 'clientes/delete/:id', component: ClienteDeleteComponent },
 
       { path: 'chamados', component: ChamadoListComponent },
       { path: 'chamados/create', component: ChamadoCreateComponent },
