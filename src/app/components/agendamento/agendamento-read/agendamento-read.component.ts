@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Chamado } from 'src/app/models/chamado';
-import { ChamadoService } from 'src/app/services/chamado.service';
+import { Agendamento } from 'src/app/models/agendamento';
+import { AgendamentoService } from 'src/app/services/agendamento.service';
 
 @Component({
-  selector: 'app-chamado-read',
-  templateUrl: './chamado-read.component.html',
-  styleUrls: ['./chamado-read.component.css']
+  selector: 'app-agendamento-read',
+  templateUrl: './agendamento-read.component.html',
+  styleUrls: ['./agendamento-read.component.css']
 })
-export class ChamadoReadComponent implements OnInit {
+export class AgendamentoReadComponent implements OnInit {
 
-  chamado: Chamado = {
+  agendamento: Agendamento = {
 
     prioridade:  '',
     status:      '',
@@ -24,19 +24,19 @@ export class ChamadoReadComponent implements OnInit {
   }
 
   constructor(
-    private chamadoService: ChamadoService,
+    private agendamentoService: AgendamentoService,
     private toastService:   ToastrService,
     private route:          ActivatedRoute,
   ) { }
 
   ngOnInit(): void {
-    this.chamado.id = this.route.snapshot.paramMap.get('id');
+    this.agendamento.id = this.route.snapshot.paramMap.get('id');
     this.findById();
   }
 
   findById(): void{
-    this.chamadoService.findById(this.chamado.id).subscribe(resposta => {
-      this.chamado = resposta;
+    this.agendamentoService.findById(this.agendamento.id).subscribe(resposta => {
+      this.agendamento = resposta;
     }, ex => {
       this.toastService.error(ex.console.error.error);
     })

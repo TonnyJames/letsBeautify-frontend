@@ -41,10 +41,10 @@ import { ClienteCreateComponent } from './components/cliente/cliente-create/clie
 import { ClienteDeleteComponent } from './components/cliente/cliente-delete/cliente-delete.component';
 import { ClienteListComponent } from './components/cliente/cliente-list/cliente-list.component';
 import { ClienteUpdateComponent } from './components/cliente/cliente-update/cliente-update.component';
-import { ChamadoListComponent } from './components/chamado/chamado-list/chamado-list.component';
-import { ChamadoCreateComponent } from './components/chamado/chamado-create/chamado-create.component';
-import { ChamadoUpdateComponent } from './components/chamado/chamado-update/chamado-update.component';
-import { ChamadoReadComponent } from './components/chamado/chamado-read/chamado-read.component';
+import { AgendamentoListComponent } from './components/agendamento/agendamento-list/agendamento-list.component';
+import { AgendamentoCreateComponent } from './components/agendamento/agendamento-create/agendamento-create.component';
+import { AgendamentoUpdateComponent } from './components/agendamento/agendamento-update/agendamento-update.component';
+import { AgendamentoReadComponent } from './components/agendamento/agendamento-read/agendamento-read.component';
 
 @NgModule({
   declarations: [
@@ -62,10 +62,10 @@ import { ChamadoReadComponent } from './components/chamado/chamado-read/chamado-
     ClienteDeleteComponent,
     ClienteListComponent,
     ClienteUpdateComponent,
-    ChamadoListComponent,
-    ChamadoCreateComponent,
-    ChamadoUpdateComponent,
-    ChamadoReadComponent
+    AgendamentoCreateComponent,
+    AgendamentoListComponent,
+    AgendamentoReadComponent,
+    AgendamentoUpdateComponent
   ],
   imports: [
     BrowserModule,

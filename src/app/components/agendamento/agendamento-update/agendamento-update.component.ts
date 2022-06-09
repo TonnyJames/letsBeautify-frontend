@@ -2,22 +2,22 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Chamado } from 'src/app/models/chamado';
+import { Agendamento } from 'src/app/models/agendamento';
 import { Cliente } from 'src/app/models/cliente';
 import { Colaborador } from 'src/app/models/colaborador';
-import { ChamadoService } from 'src/app/services/chamado.service';
+import { AgendamentoService } from 'src/app/services/agendamento.service';
 import { ClienteService } from 'src/app/services/cliente.service';
 import { ColaboradorService } from 'src/app/services/colaborador.service';
 
 @Component({
-  selector: 'app-chamado-update',
-  templateUrl: './chamado-update.component.html',
-  styleUrls: ['./chamado-update.component.css']
+  selector: 'app-agendamento-update',
+  templateUrl: './agendamento-update.component.html',
+  styleUrls: ['./agendamento-update.component.css']
 })
-export class ChamadoUpdateComponent implements OnInit {
+export class AgendamentoUpdateComponent implements OnInit {
   clientes: Cliente[] = []
   colaboradors: Colaborador[] = []
-  chamado: Chamado = {
+  agendamento: Agendamento = {
 
     prioridade:  '',
     status:      '',
@@ -39,7 +39,7 @@ export class ChamadoUpdateComponent implements OnInit {
 
 
   constructor(
-    private chamadoService: ChamadoService,
+    private agendamentoService: AgendamentoService,
     private clienteService: ClienteService,
     private colaboradorService: ColaboradorService,
     private toastService:   ToastrService,
@@ -48,24 +48,24 @@ export class ChamadoUpdateComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.chamado.id = this.route.snapshot.paramMap.get('id');
+    this.agendamento.id = this.route.snapshot.paramMap.get('id');
     this.findById();
     this.findAllClientes;
     this.findAllColaboradors;
   }
 
   findById(): void{
-    this.chamadoService.findById(this.chamado.id).subscribe(resposta => {
-      this.chamado = resposta;
+    this.agendamentoService.findById(this.agendamento.id).subscribe(resposta => {
+      this.agendamento = resposta;
     }, ex => {
       this.toastService.error(ex.console.error.error);
     })
   }
 
   update(): void {
-    this.chamadoService.update(this.chamado).subscribe(resposta => {
-      this.toastService.success('Chamado atualizado com sucesso', 'Chamado Update');
-      this.router.navigate(['chamados']);
+    this.agendamentoService.update(this.agendamento).subscribe(resposta => {
+      this.toastService.success('Agendamento atualizado com sucesso', 'Agendamento Update');
+      this.router.navigate(['agendamentos']);
     }, ex =>{
       this.toastService.error(ex.error.error);
     })

@@ -18,7 +18,7 @@
                 <i class="material-icons">person</i>
                 Clientes
             </a>
-            <a mat-list-item [routerLink]="['chamados']">
+            <a mat-list-item [routerLink]="['Agendamentos']">
                 <i class="material-icons">support</i>
                 Agendamentos
             </a>
@@ -36,14 +36,13 @@
             </a>
         </mat-nav-list>
     </mat-drawer>
-  
+
     <div class="sidenav-content">
         <app-header></app-header>
-      <button class="menu mat-elevation-z8" (click)="drawer.toggle()" mat-icon-button>
-        <mat-icon>menu</mat-icon>
-      </button>
-      <router-outlet></router-outlet>
+        <button class="menu mat-elevation-z8" (click)="drawer.toggle()" mat-icon-button>
+            <mat-icon>menu</mat-icon>
+        </button>
+        <router-outlet></router-outlet>
     </div>
-  
-  </mat-drawer-container>
-  
+
+</mat-drawer-container>

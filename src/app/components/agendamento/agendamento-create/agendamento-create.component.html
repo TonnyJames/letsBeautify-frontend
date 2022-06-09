@@ -1,12 +1,12 @@
 <div class="container mat-elevation-z8">
-    <h1 class="full-width">Criando chamados</h1>
-    <img class="full-width" src="assets/img/penrose.svg" alt="chamado img">
+    <h1 class="full-width">Criando agendamentos</h1>
+    <img class="full-width" src="assets/img/penrose.svg" alt="agendamento img">
 
     <form class="form">
         <mat-form-field class="full-width" appearance="outline">
-          <mat-label>Titulo do chamado</mat-label>
+          <mat-label>Titulo do agendamento</mat-label>
           <input 
-          [(ngModel)]="chamado.titulo" name="titulo"
+          [(ngModel)]="agendamento.titulo" name="titulo"
           [formControl]="titulo"
           required
           matInput placeholder="Ex. um exemplo de serviço">
@@ -17,7 +17,7 @@
         <mat-form-field appearance="outline">
             <mat-label>Selecione um status</mat-label>
             <mat-select [formControl]="status" required
-            [(ngModel)]="chamado.status" name="status">
+            [(ngModel)]="agendamento.status" name="status">
               <mat-option value="0">Aberto</mat-option>
               <mat-option value="1">Em andamento</mat-option>
               <mat-option value="2">Encerrado</mat-option>
@@ -27,7 +27,7 @@
         <mat-form-field appearance="outline">
             <mat-label>Selecione a prioridade</mat-label>
             <mat-select [formControl]="prioridade" required
-            [(ngModel)]="chamado.prioridade" name="prioridade">
+            [(ngModel)]="agendamento.prioridade" name="prioridade">
               <mat-option value="0">Baixa</mat-option>
               <mat-option value="1">Média</mat-option>
               <mat-option value="2">Alta</mat-option>
@@ -39,7 +39,7 @@
         <mat-form-field class="full-width" appearance="outline">
             <mat-label>Selecione um técnico</mat-label>
             <mat-select [formControl]="colaborador" required
-            [(ngModel)]="chamado.colaborador" name="colaborador">
+            [(ngModel)]="agendamento.colaborador" name="colaborador">
               <mat-option **ngFor="let tec of colaboradors" value="{{ tec.id }}">{{ tec.nome }}</mat-option>
             </mat-select>
           </mat-form-field>
@@ -49,7 +49,7 @@
         <mat-form-field class="full-width" appearance="outline">
             <mat-label>Selecione um cliente</mat-label>
             <mat-select [formControl]="titulo" required
-            [(ngModel)]="chamado.cliente" name="cliente">
+            [(ngModel)]="agendamento.cliente" name="cliente">
               <mat-option **ngFor="let cli of clientes" value="{{ cli.id }}">{{cli.nome}}</mat-option>
             </mat-select>
           </mat-form-field>
@@ -59,7 +59,7 @@
         <mat-form-field class="full-width" appearance="outline">
           <mat-label>Descrição</mat-label>
           <textarea [formControl]="observacoes" required
-          [(ngModel)]="chamado.observacoes" name="observacoes"
+          [(ngModel)]="agendamento.observacoes" name="observacoes"
           class="descricao" matInput placeholder="Ex. It makes me feel..."></textarea>
         </mat-form-field>
       </form>

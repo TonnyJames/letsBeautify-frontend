@@ -2,23 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Chamado } from 'src/app/models/chamado';
+import { Agendamento } from 'src/app/models/agendamento';
 import { Cliente } from 'src/app/models/cliente';
 import { Colaborador } from 'src/app/models/colaborador';
-import { ChamadoService } from 'src/app/services/chamado.service';
+import { AgendamentoService } from 'src/app/services/agendamento.service';
 import { ClienteService } from 'src/app/services/cliente.service';
 import { ColaboradorService } from 'src/app/services/colaborador.service';
 
 @Component({
-  selector: 'app-chamado-create',
-  templateUrl: './chamado-create.component.html',
-  styleUrls: ['./chamado-create.component.css']
+  selector: 'app-agendamento-create',
+  templateUrl: './agendamento-create.component.html',
+  styleUrls: ['./agendamento-create.component.css']
 })
-export class ChamadoCreateComponent implements OnInit {
+export class AgendamentoCreateComponent implements OnInit {
 
   clientes: Cliente[] = []
   colaboradors: Colaborador[] = []
-  chamado: Chamado = {
+  agendamento: Agendamento = {
 
     prioridade:  '',
     status:      '',
@@ -40,7 +40,7 @@ export class ChamadoCreateComponent implements OnInit {
 
 
   constructor(
-    private chamadoService: ChamadoService,
+    private agendamentoService: AgendamentoService,
     private clienteService: ClienteService,
     private colaboradorService: ColaboradorService,
     private toastService:   ToastrService,
@@ -53,9 +53,9 @@ export class ChamadoCreateComponent implements OnInit {
   }
 
   create(): void {
-    this.chamadoService.create(this.chamado).subscribe(resposta => {
-      this.toastService.success('Chamado cadastrado com sucesso', 'Novo Chamado');
-      this.router.navigate(['chamados']);
+    this.agendamentoService.create(this.agendamento).subscribe(resposta => {
+      this.toastService.success('Agendamento cadastrado com sucesso', 'Novo Agendamento');
+      this.router.navigate(['agendamentos']);
     }, ex =>{
       this.toastService.error(ex.error.error);
     })
