@@ -16,9 +16,9 @@ import { ColaboradorService } from 'src/app/services/colaborador.service';
 })
 export class AgendamentoCreateComponent implements OnInit {
 
-  clientes: Cliente[] = []
-  colaboradors: Colaborador[] = []
-  agendamento: Agendamento = {
+  clientes:           Cliente[] = []
+  colaboradores:  Colaborador[] = []
+  agendamento:    Agendamento = {
 
     prioridade:  '',
     status:      '',
@@ -48,8 +48,8 @@ export class AgendamentoCreateComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.findAllClientes;
-    this.findAllColaboradors;
+    this.findAllClientes();
+    this.findAllColaboradores();
   }
 
   create(): void {
@@ -67,9 +67,9 @@ export class AgendamentoCreateComponent implements OnInit {
     })
   }
 
-  findAllColaboradors(): void {
+  findAllColaboradores(): void {
     this.colaboradorService.findAll().subscribe(resposta => {
-      this.colaboradors = resposta
+      this.colaboradores = resposta
     })
   }
 

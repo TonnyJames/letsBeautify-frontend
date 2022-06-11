@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from "@angular/common";
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth/auth.guard';
 import { AgendamentoCreateComponent } from './components/agendamento/agendamento-create/agendamento-create.component'; 
@@ -35,16 +36,16 @@ const routes: Routes = [
       { path: 'clientes/update/:id', component: ClienteUpdateComponent },
       { path: 'clientes/delete/:id', component: ClienteDeleteComponent },
 
-      { path: 'Agendamentos', component: AgendamentoListComponent },
-      { path: 'Agendamentos/create', component: AgendamentoCreateComponent },
-      { path: 'Agendamentos/:id', component: AgendamentoUpdateComponent },
-      { path: 'Agendamentos/read/:id', component: AgendamentoReadComponent }
+      { path: 'agendamentos', component: AgendamentoListComponent },
+      { path: 'agendamentos/create', component: AgendamentoCreateComponent },
+      { path: 'agendamentos/:id', component: AgendamentoUpdateComponent },
+      { path: 'agendamentos/read/:id', component: AgendamentoReadComponent }
     ]
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes), CommonModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

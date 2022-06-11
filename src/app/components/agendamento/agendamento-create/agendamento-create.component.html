@@ -1,15 +1,14 @@
 <div class="container mat-elevation-z8">
     <h1 class="full-width">Criando agendamentos</h1>
-    <img class="full-width" src="assets/img/penrose.svg" alt="agendamento img">
+    <!-- <img class="full-width" src="assets/img/penrose.svg" alt="agendamento img"> -->
 
     <form class="form">
         <mat-form-field class="full-width" appearance="outline">
           <mat-label>Titulo do agendamento</mat-label>
           <input 
           [(ngModel)]="agendamento.titulo" name="titulo"
-          [formControl]="titulo"
-          required
-          matInput placeholder="Ex. um exemplo de serviço">
+          [formControl]="titulo" required
+          matInput placeholder="Ex. Não utilizar marca tal...">
         </mat-form-field>
       </form>
 
@@ -28,19 +27,18 @@
             <mat-label>Selecione a prioridade</mat-label>
             <mat-select [formControl]="prioridade" required
             [(ngModel)]="agendamento.prioridade" name="prioridade">
-              <mat-option value="0">Baixa</mat-option>
-              <mat-option value="1">Média</mat-option>
-              <mat-option value="2">Alta</mat-option>
+              <mat-option value="0">Normal</mat-option>
+              <mat-option value="1">Alta</mat-option>
             </mat-select>
           </mat-form-field>
       </div>
 
       <div class="colaborador">
         <mat-form-field class="full-width" appearance="outline">
-            <mat-label>Selecione um técnico</mat-label>
+            <mat-label>Selecione um de nossos profissionais</mat-label>
             <mat-select [formControl]="colaborador" required
             [(ngModel)]="agendamento.colaborador" name="colaborador">
-              <mat-option **ngFor="let tec of colaboradors" value="{{ tec.id }}">{{ tec.nome }}</mat-option>
+              <mat-option *ngFor="let prof of colaboradores" value="{{ prof.id }}">{{ prof.nome }}</mat-option>
             </mat-select>
           </mat-form-field>
       </div>
@@ -48,19 +46,19 @@
       <div class="cliente">
         <mat-form-field class="full-width" appearance="outline">
             <mat-label>Selecione um cliente</mat-label>
-            <mat-select [formControl]="titulo" required
+            <mat-select [formControl]="cliente" required
             [(ngModel)]="agendamento.cliente" name="cliente">
-              <mat-option **ngFor="let cli of clientes" value="{{ cli.id }}">{{cli.nome}}</mat-option>
+              <mat-option *ngFor="let cli of clientes" value="{{ cli.id }}">{{cli.nome}}</mat-option>
             </mat-select>
           </mat-form-field>
       </div>
 
       <form class="form">
         <mat-form-field class="full-width" appearance="outline">
-          <mat-label>Descrição</mat-label>
+          <mat-label>Observações</mat-label>
           <textarea [formControl]="observacoes" required
           [(ngModel)]="agendamento.observacoes" name="observacoes"
-          class="descricao" matInput placeholder="Ex. It makes me feel..."></textarea>
+          class="observacoes" matInput placeholder="Ex. Não usar produtos da marca **** pois tenho alergia"></textarea>
         </mat-form-field>
       </form>
 

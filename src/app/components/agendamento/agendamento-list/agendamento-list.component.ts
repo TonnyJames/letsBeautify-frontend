@@ -47,13 +47,11 @@ export class AgendamentoListComponent implements OnInit {
     } else {
       return 'Encerrado'
     }
-  }
+  } 
 
   retornaPrioridade(prioridade: any): string {
     if (prioridade == '0') {
-      return 'Baixa'
-    } else if (prioridade == 1) {
-      return 'Média'
+      return 'Normal'
     } else {
       return 'Alta'
     }
