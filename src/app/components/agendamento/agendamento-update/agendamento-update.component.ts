@@ -50,8 +50,8 @@ export class AgendamentoUpdateComponent implements OnInit {
   ngOnInit(): void {
     this.agendamento.id = this.route.snapshot.paramMap.get('id');
     this.findById();
-    this.findAllClientes;
-    this.findAllColaboradors;
+    this.findAllClientes();
+    this.findAllColaboradors();
   }
 
   findById(): void{
@@ -105,11 +105,10 @@ export class AgendamentoUpdateComponent implements OnInit {
 
   retornaPrioridade(prioridade: any): string {
     if (prioridade == '0') {
-      return 'Baixa'
-    } else if (prioridade == 1) {
-      return 'Média'
+      return 'Normal'
     } else {
       return 'Alta'
     }
   }
+
 }
