@@ -4,11 +4,16 @@
     background-color: rgb(235, 235, 235);
 }
 img {
-display: inline;
+    display: inline-flex;
+align-items: center;
+    justify-items: flex-end;
     height: 15rem;
     width: auto;
+    margin: 2.5%;
+    /* margin-left: auto;
+    margin-right: auto  */
     /* width: 65%;
-    justify-content: center;
+    
     align-items: center; */
     
 }
