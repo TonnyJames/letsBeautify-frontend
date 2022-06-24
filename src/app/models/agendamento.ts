@@ -1,7 +1,7 @@
 export interface Agendamento{
     id?: any;
-    dataAbertura?: string;
-    dataFechamento?: string;
+    dataCriacao?: string;
+    dataAgendada: string;
     prioridade: string;
     status: string;
     titulo: string;

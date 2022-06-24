@@ -13,6 +13,7 @@ export class AgendamentoReadComponent implements OnInit {
 
   agendamento: Agendamento = {
 
+    dataAgendada: '',
     prioridade:  '',
     status:      '',
     titulo:      '',

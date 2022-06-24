@@ -19,6 +19,7 @@ export class AgendamentoUpdateComponent implements OnInit {
   colaboradors: Colaborador[] = []
   agendamento: Agendamento = {
 
+    dataAgendada: '',
     prioridade:  '',
     status:      '',
     titulo:      '',

@@ -12,10 +12,18 @@
         </mat-form-field>
       </form>
 
+      <mat-form-field color="pink" appearance="fill">
+        <mat-label>Data do agendamento:</mat-label>
+        <input [(ngModel)]="agendamento.dataAgendada" name="dataAgendada" matInput [matDatepicker]="picker1" [formControl]="dataAgendada" required >
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+
       <div class="status-prioridade">
         <mat-form-field appearance="outline">
             <mat-label>Selecione um status</mat-label>
-            <mat-select [formControl]="status" required
+            <mat-select 
             [(ngModel)]="agendamento.status" name="status">
               <mat-option value="0">Aberto</mat-option>
               <mat-option value="1">Em andamento</mat-option>
