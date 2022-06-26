@@ -17,11 +17,13 @@ import { ColaboradorCreateComponent } from './components/colaborador/colaborador
 import { ColaboradorDeleteComponent } from './components/colaborador/colaborador-delete/colaborador-delete.component';
 import { ColaboradorListComponent } from './components/colaborador/colaborador-list/colaborador-list.component';
 import { ColaboradorUpdateComponent } from './components/colaborador/colaborador-update/colaborador-update.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 const routes: Routes = [
 
 
       { path: 'login', component: LoginComponent },
+      { path: 'registrar', component: SignupComponent },
       
       {path: '', component: NavComponent, canActivate: [AuthGuard], children: [
       { path: 'home', component: HomeComponent },

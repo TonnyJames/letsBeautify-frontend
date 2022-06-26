@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule} from '@angular/common';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
 
 // Imports para componentes do Angular Material
+import {MatNativeDateModule} from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -46,6 +49,10 @@ import { AgendamentoCreateComponent } from './components/agendamento/agendamento
 import { AgendamentoUpdateComponent } from './components/agendamento/agendamento-update/agendamento-update.component';
 import { AgendamentoReadComponent } from './components/agendamento/agendamento-read/agendamento-read.component';
 
+//Import Moment
+import * as moment from 'moment';
+import { SignupComponent } from './components/signup/signup.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,10 +72,12 @@ import { AgendamentoReadComponent } from './components/agendamento/agendamento-r
     AgendamentoCreateComponent,
     AgendamentoListComponent,
     AgendamentoReadComponent,
-    AgendamentoUpdateComponent
+    AgendamentoUpdateComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     BrowserAnimationsModule,
         // Forms
@@ -91,6 +100,8 @@ import { AgendamentoReadComponent } from './components/agendamento/agendamento-r
         MatIconModule,
         MatListModule,
         MatCardModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
         ToastrModule.forRoot({
           timeOut: 4000,
           closeButton: true,

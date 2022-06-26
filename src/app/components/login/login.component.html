@@ -2,23 +2,26 @@
     <form class="form mat-elevation-z8">
         <div class="cabLogin">
             <!-- <img src="assets/img/letsLogo.jpeg" alt="img login"> -->
-            <h1>LOGIN</h1>
+            <h1 class="alignCenter">LOGIN</h1>
         </div>
         <mat-form-field class="full-width" appearance="outline">
             <mat-label>E-mail</mat-label>
-            <input [formControl]="email" required [(ngModel)]="creds.email" name="email" matInput
+            <input [formControl]="email" required [(ngModel)]="creds.email" name="email" matInput class="bg-transparente"
                 placeholder="Ex. fulano@emil.com">
             <mat-icon matSuffix>email</mat-icon>
         </mat-form-field>
 
         <mat-form-field class="full-width" appearance="outline">
             <mat-label>Senha</mat-label>
-            <input [formControl]=senha required [(ngModel)]="creds.senha" name="senha" type="password" matInput
+            <input  [formControl]=senha required [(ngModel)]="creds.senha" name="senha" type="password" matInput
                 placeholder="Ex. 123">
             <mat-icon matSuffix>password</mat-icon>
         </mat-form-field>
 
         <button (click)="logar()" [disabled]="!validaCampos()" class="mat-elevation-z4" mat-stroked-button
             color="white">Login</button>
+
+            <h3 class="alignCenter">ou</h3>
+            <a class="alignCenter"[routerLink]="['../registrar']">Registre-se</a>
     </form>
 </div>
