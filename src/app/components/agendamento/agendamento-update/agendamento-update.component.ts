@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import * as moment from 'moment';
 import { ToastrService } from 'ngx-toastr';
 import { Agendamento } from 'src/app/models/agendamento';
 import { Cliente } from 'src/app/models/cliente';
@@ -19,10 +20,11 @@ export class AgendamentoUpdateComponent implements OnInit {
   colaboradors: Colaborador[] = []
   agendamento: Agendamento = {
 
-    dataAgendada: '',
-    prioridade:  '',
-    status:      '',
     titulo:      '',
+    dataAgendada: '',
+    horaAgendada:'',
+    // prioridade:  '',
+    // status:      '',
     observacoes:   '',
     colaborador:     '',
     cliente:     '',
@@ -30,10 +32,9 @@ export class AgendamentoUpdateComponent implements OnInit {
     nomeColaborador: ''
   }
 
-
-  prioridade: FormControl = new FormControl(null, [Validators.required])
-  status:     FormControl = new FormControl(null, [Validators.required])
   titulo:     FormControl = new FormControl(null, [Validators.required])
+  dataAgendada: FormControl = new FormControl(null, [Validators.required])
+  horaAgendada: FormControl = new FormControl(null, [Validators.required])
   observacoes:  FormControl = new FormControl(null, [Validators.required])
   colaborador:    FormControl = new FormControl(null, [Validators.required])
   cliente:    FormControl = new FormControl(null, [Validators.required])
@@ -64,6 +65,8 @@ export class AgendamentoUpdateComponent implements OnInit {
   }
 
   update(): void {
+    let newDate: moment.Moment = moment.utc(this.agendamento.dataAgendada).local();
+    this.agendamento.dataAgendada = newDate.format("YYYY-MM-DD")
     this.agendamentoService.update(this.agendamento).subscribe(resposta => {
       this.toastService.success('Agendamento atualizado com sucesso', 'Agendamento Update');
       this.router.navigate(['agendamentos']);
@@ -86,30 +89,46 @@ export class AgendamentoUpdateComponent implements OnInit {
 
 
   validaCampos(): boolean{
-    return this.prioridade.valid
-    && this.status.valid
+    return this.dataAgendada.valid
+    && this.horaAgendada.valid
     && this.titulo.valid
     && this.observacoes.valid
     && this.colaborador.valid
     && this.cliente.valid
   }
 
-  retornaStatus(status: any): string {
-    if (status == '0') {
-      return 'Aberto'
-    } else if (status == 1) {
-      return 'Em andamento'
-    } else {
-      return 'Encerrado'
-    }
-  }
+  retornaHorario(horario: any): string {
+    if (horario == '1') {
+return '09:00 às 10:00'
+} else if (horario == 2) {
+return '10:00 às 11:00'
+} else if (horario == 3) {
+return '11:00 às 12:00'
+} else if (horario == 4) {
+return '13:00 às 14:00'
+} else if (horario == 5) {
+return '14:00 às 15:00'
+} else  {
+return '15:00 às 16:00'
+}
+}
 
-  retornaPrioridade(prioridade: any): string {
-    if (prioridade == '0') {
-      return 'Normal'
-    } else {
-      return 'Alta'
-    }
-  }
+  // retornaStatus(status: any): string {
+  //   if (status == '0') {
+  //     return 'Aberto'
+  //   } else if (status == 1) {
+  //     return 'Em andamento'
+  //   } else {
+  //     return 'Encerrado'
+  //   }
+  // }
+
+  // retornaPrioridade(prioridade: any): string {
+  //   if (prioridade == '0') {
+  //     return 'Normal'
+  //   } else {
+  //     return 'Alta'
+  //   }
+  // }
 
 }

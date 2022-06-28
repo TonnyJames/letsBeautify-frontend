@@ -22,8 +22,9 @@ export class AgendamentoCreateComponent implements OnInit {
   agendamento:    Agendamento = {
 
     dataAgendada:'',
-    prioridade:  '',
-    status:      '',
+    horaAgendada:'',
+    // prioridade:  '',
+    // status:      '',
     titulo:      '',
     observacoes:   '',
     colaborador:     '',
@@ -32,9 +33,10 @@ export class AgendamentoCreateComponent implements OnInit {
     nomeColaborador: ''
   }
 
+  horaAgendada: FormControl = new FormControl(null, [Validators.required]);
   dataAgendada: FormControl = new FormControl(null, [Validators.required])
-  prioridade: FormControl = new FormControl(null, [Validators.required])
-  //status:     FormControl = new FormControl(null, [Validators.required])
+  // prioridade: FormControl = new FormControl(null, [Validators.required])
+  // status:     FormControl = new FormControl(null, [Validators.required])
   titulo:     FormControl = new FormControl(null, [Validators.required])
   observacoes:  FormControl = new FormControl(null, [Validators.required])
   colaborador:    FormControl = new FormControl(null, [Validators.required])
@@ -79,11 +81,10 @@ export class AgendamentoCreateComponent implements OnInit {
 
 
   validaCampos(): boolean{
-    return this.prioridade.valid
+    return this.dataAgendada.valid
     //&& this.status.valid
-    && this.dataAgendada.valid
+    && this.horaAgendada.valid
     && this.titulo.valid
-
     && this.colaborador.valid
     && this.cliente.valid
   }

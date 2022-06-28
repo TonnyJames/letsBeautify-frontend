@@ -17,12 +17,22 @@ img {
     height: 15rem;
 }
 
-.status-prioridade {
+/* .status-prioridade {
     display: flex;
     justify-content: space-between;
 }
 
 .status-prioridade mat-form-field {
+    width: 49%;
+} */
+
+.dataAgendada{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.dataAgendada mat-form-field {
     width: 49%;
 }
 
