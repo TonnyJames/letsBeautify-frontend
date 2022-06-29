@@ -38,3 +38,17 @@ p {
     margin-top: 3rem;
     opacity: .5;
 }
+
+.sign {
+    
+    text-align: center;
+    margin: 0;
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+    opacity: 60%;
+}
+
+.sign a {
+    text-decoration: none;
+    color: maroon;
+}
