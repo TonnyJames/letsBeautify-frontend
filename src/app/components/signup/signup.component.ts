@@ -5,7 +5,6 @@ import { ToastrService } from 'ngx-toastr';
 import { Cliente } from 'src/app/models/cliente';
 import { ClienteService } from 'src/app/services/cliente.service';
 
-
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -45,7 +44,7 @@ export class SignupComponent implements OnInit {
   create(): void {
     this.service.create(this.cliente).subscribe(() => {
       this.toast.success('Você foi registrado com sucesso', 'Cadastro');
-      this.router.navigate(['login'])
+      this.router.navigate(['../'])
     }), ex => {
       if(ex.error.errors){
         ex.error.errors.fotEach(element =>{
