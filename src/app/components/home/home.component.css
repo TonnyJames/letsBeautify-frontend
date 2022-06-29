@@ -1,19 +1,28 @@
 .card {
-    width: 90%;
-    margin: 1rem auto;
+    width           : 90%;
+    margin          : 1rem auto;
     background-color: rgb(235, 235, 235);
 }
+
+.fotosHome {
+    display: flex;
+    justify-content: space-between;
+}
+
 img {
-    display: inline-flex;
-align-items: center;
-    justify-items: flex-end;
-    height: 15rem;
-    width: auto;
-    margin: 2.5%;
-    /* margin-left: auto;
-    margin-right: auto  */
-    /* width: 65%;
-    
-    align-items: center; */
-    
+    height        : 15rem;
+    width         : auto;
+}
+
+mat-card-content{
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.sign {
+    text-align: center;
+    margin: 0;
+    margin-top: 2rem;
+    opacity: 60%;
 }
