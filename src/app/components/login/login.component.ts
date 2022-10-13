@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Credenciais } from 'src/app/models/credenciais';
 import { AuthService } from 'src/app/services/auth.service';
+import { MatDialog } from '@angular/material/dialog';
+import { RegisterDialogComponent } from './register-dialog/register-dialog.component';
 
 @Component({
   selector: 'app-login',
@@ -23,7 +25,18 @@ export class LoginComponent implements OnInit {
   constructor(
     private toast: ToastrService,
     private service: AuthService,
-    private router: Router) { }
+    private router: Router,
+    public dialog: MatDialog) { }
+
+    escolherTipoRegistro(): void {
+      const dialogRef = this.dialog.open(RegisterDialogComponent, {
+        width: '250px',
+      });
+
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('The dialog was closed');
+      });
+    }
 
   ngOnInit(): void {
   }

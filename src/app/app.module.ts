@@ -29,15 +29,18 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
+import { ToastrModule } from 'ngx-toastr';
+import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
+import { NgxMaskModule } from 'ngx-mask';
+import { MatDialogModule } from '@angular/material/dialog';
+
+//imports da propria aplicação
 import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ColaboradorListComponent } from './components/colaborador/colaborador-list/colaborador-list.component';
-import { LoginComponent } from './components/login/login.component';
-import { ToastrModule } from 'ngx-toastr';
-import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
+import { LoginComponent} from './components/login/login.component';
 import { ColaboradorCreateComponent } from './components/colaborador/colaborador-create/colaborador-create.component';
-import { NgxMaskModule } from 'ngx-mask';
 import { ColaboradorUpdateComponent } from './components/colaborador/colaborador-update/colaborador-update.component';
 import { ColaboradorDeleteComponent } from './components/colaborador/colaborador-delete/colaborador-delete.component';
 import { ClienteCreateComponent } from './components/cliente/cliente-create/cliente-create.component';
@@ -52,6 +55,7 @@ import { AgendamentoReadComponent } from './components/agendamento/agendamento-r
 //Import Moment
 import * as moment from 'moment';
 import { SignupComponent } from './components/signup/signup.component';
+import { RegisterDialogComponent } from './components/login/register-dialog/register-dialog.component';
 
 @NgModule({
   declarations: [
@@ -73,9 +77,11 @@ import { SignupComponent } from './components/signup/signup.component';
     AgendamentoListComponent,
     AgendamentoReadComponent,
     AgendamentoUpdateComponent,
-    SignupComponent
+    SignupComponent,
+    RegisterDialogComponent,
   ],
   imports: [
+    MatDialogModule,
     BrowserModule,
     CommonModule,
     AppRoutingModule,

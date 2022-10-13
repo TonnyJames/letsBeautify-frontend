@@ -23,7 +23,8 @@
             color="white">Login</button>
 
             <h3 class="full-width centralizado">ou</h3>
-            <h3 class="full-width centralizado"><a [routerLink]="['../registrar']">Registre-se</a></h3>
+            <h3 class="full-width centralizado" (click)="escolherTipoRegistro()">Registre-se</h3>
+            <!-- para chamar rota do registro: <a [routerLink]="['../registrar']"></a> -->
 
             <p class="fullwidth sign"><a href="https://github.com/TonnyJames"target="_blank">Desenvolvido por: Tonny Reis</a></p>
     </form>
