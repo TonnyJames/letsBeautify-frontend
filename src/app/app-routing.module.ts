@@ -17,13 +17,15 @@ import { ColaboradorCreateComponent } from './components/colaborador/colaborador
 import { ColaboradorDeleteComponent } from './components/colaborador/colaborador-delete/colaborador-delete.component';
 import { ColaboradorListComponent } from './components/colaborador/colaborador-list/colaborador-list.component';
 import { ColaboradorUpdateComponent } from './components/colaborador/colaborador-update/colaborador-update.component';
-import { SignupComponent } from './components/signup/signup.component';
+import { RegistrarClienteComponent } from './components/registar-button/registrar-cliente/registrar-cliente.component';
+import { RegistrarServicoComponent } from './components/registar-button/registrar-servico/registrar-servico.component';
 
 const routes: Routes = [
 
 
       { path: 'login', component: LoginComponent },
-      { path: 'registrar', component: SignupComponent },
+      { path: 'registrarcliente', component: RegistrarClienteComponent },
+      { path: 'registrarservico', component: RegistrarServicoComponent },
       
       {path: '', component: NavComponent, canActivate: [AuthGuard], children: [
       { path: 'home', component: HomeComponent },
