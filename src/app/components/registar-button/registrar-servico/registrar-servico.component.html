@@ -1,7 +1,7 @@
 <div class="container mat-elevation-z8">
     <div>
       <form action="" class="form">
-          <h1 class="fullwidth">Cadastrar Profissional</h1>
+          <h1 class="fullwidth">Cadastrar Novo Serviço de Estética</h1>
           <!-- <img class="fullwidth" src="assets/img/faders.png" alt="image-create"> -->
   
   
@@ -13,13 +13,13 @@
   
             <p>
               <mat-form-field class="fullwidth" appearance="legacy">
-                <mat-label>Nome:</mat-label>
+                <mat-label>Nome Comercial:</mat-label>
                 <input 
-                [(ngModel)]="colaborador.nome"
-                name="nome"
-                [formControl] = "nome"
+                [(ngModel)]="servico.nmNegocio"
+                name="nmNegocio"
+                [formControl] = "nmNegocio"
                 required
-                matInput placeholder="Fulano de tal..."
+                matInput placeholder="MothaFucka Barber Club..."
                 maxlength="70"
                 >
                 <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
@@ -27,11 +27,11 @@
             </p>
             <p>
               <mat-form-field class="fullwidth" appearance="legacy">
-                <mat-label>CPF:</mat-label>
+                <mat-label>CPF/CNPJ:</mat-label>
                 <input 
-                [(ngModel)]="colaborador.cpf"
-                name="cpf"
-                [formControl] = "cpf"
+                [(ngModel)]="servico.nrInsc"
+                name="nrInsc"
+                [formControl] = "nrInsc"
                 required
                 matInput placeholder="123.456.789-10"
                 mask="000.000.000.00">
@@ -43,7 +43,7 @@
               <mat-form-field class="fullwidth" appearance="legacy">
                 <mat-label>E-mail:</mat-label>
                 <input 
-                [(ngModel)]="colaborador.email"
+                [(ngModel)]="servico.email"
                 name="email"
                 [formControl] = "email"
                 required
@@ -56,7 +56,7 @@
               <mat-form-field class="fullwidth" appearance="legacy">
                 <mat-label>Senha:</mat-label>
                 <input 
-                [(ngModel)]="colaborador.senha"
+                [(ngModel)]="servico.senha"
                 name="senha"
                 [formControl] = "senha"
                 required
