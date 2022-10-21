@@ -6,11 +6,11 @@ import { Cliente } from 'src/app/models/cliente';
 import { ClienteService } from 'src/app/services/cliente.service';
 
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  selector: 'app-registrar-cliente',
+  templateUrl: './registrar-cliente.component.html',
+  styleUrls: ['./registrar-cliente.component.css']
 })
-export class SignupComponent implements OnInit {
+export class RegistrarClienteComponent implements OnInit {
 
   cliente: Cliente = {
     id: '',

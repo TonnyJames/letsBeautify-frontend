@@ -54,8 +54,10 @@ import { AgendamentoReadComponent } from './components/agendamento/agendamento-r
 
 //Import Moment
 import * as moment from 'moment';
-import { SignupComponent } from './components/signup/signup.component';
+import { RegistrarClienteComponent } from './components/registar-button/registrar-cliente/registrar-cliente.component';
 import { RegisterDialogComponent } from './components/login/register-dialog/register-dialog.component';
+import { AuthGuard } from './auth/auth.guard';
+import { RegistrarServicoComponent } from './components/registar-button/registrar-servico/registrar-servico.component';
 
 @NgModule({
   declarations: [
@@ -77,8 +79,9 @@ import { RegisterDialogComponent } from './components/login/register-dialog/regi
     AgendamentoListComponent,
     AgendamentoReadComponent,
     AgendamentoUpdateComponent,
-    SignupComponent,
+    RegistrarClienteComponent,
     RegisterDialogComponent,
+    RegistrarServicoComponent,
   ],
   imports: [
     MatDialogModule,
@@ -115,7 +118,7 @@ import { RegisterDialogComponent } from './components/login/register-dialog/regi
         }),
         NgxMaskModule.forRoot()
   ],
-  providers: [AuthInterceptorProvider],
+  providers: [AuthInterceptorProvider, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
