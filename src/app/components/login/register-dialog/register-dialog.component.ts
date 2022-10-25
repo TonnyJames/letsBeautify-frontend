@@ -17,12 +17,14 @@ export class RegisterDialogComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onNoClick(number : Number): void {
+  onNoClick(number: Number): void {
 
-  if(number == 1) {
+    if (number === 1) {
       this.dialogRef.close();
       this.router.navigate(['../registrarcliente'])
-  }
-  this.router.navigate(['../registrarservico'])
+    } else {
+      this.dialogRef.close();
+      this.router.navigate(['../registrarservico'])
+    }
   }
 }
