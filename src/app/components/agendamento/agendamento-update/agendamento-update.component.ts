@@ -1,3 +1,5 @@
+import { Servico } from 'src/app/models/servico';
+import { ServicoService } from './../../../services/servico.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -9,6 +11,7 @@ import { Colaborador } from 'src/app/models/colaborador';
 import { AgendamentoService } from 'src/app/services/agendamento.service';
 import { ClienteService } from 'src/app/services/cliente.service';
 import { ColaboradorService } from 'src/app/services/colaborador.service';
+import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-agendamento-update',
@@ -17,7 +20,8 @@ import { ColaboradorService } from 'src/app/services/colaborador.service';
 })
 export class AgendamentoUpdateComponent implements OnInit {
   clientes: Cliente[] = []
-  colaboradors: Colaborador[] = []
+  colaboradores: Colaborador[] = []
+  servicos: Servico[] = []
   agendamento: Agendamento = {
 
     titulo:      '',
@@ -26,10 +30,12 @@ export class AgendamentoUpdateComponent implements OnInit {
     // prioridade:  '',
     // status:      '',
     observacoes:   '',
-    colaborador:     '',
     cliente:     '',
+    colaborador:     '',
+    servico: '',
     nomeCliente: '',
-    nomeColaborador: ''
+    nomeColaborador: '',
+    nomeServico: ''
   }
 
   titulo:     FormControl = new FormControl(null, [Validators.required])
@@ -38,12 +44,14 @@ export class AgendamentoUpdateComponent implements OnInit {
   observacoes:  FormControl = new FormControl(null, [Validators.required])
   colaborador:    FormControl = new FormControl(null, [Validators.required])
   cliente:    FormControl = new FormControl(null, [Validators.required])
+  servico: FormControl = new FormControl(null, [Validators.required])
 
 
   constructor(
     private agendamentoService: AgendamentoService,
     private clienteService: ClienteService,
     private colaboradorService: ColaboradorService,
+    private servicoService: ServicoService,
     private toastService:   ToastrService,
     private route:          ActivatedRoute,
     private router:         Router
@@ -83,7 +91,13 @@ export class AgendamentoUpdateComponent implements OnInit {
 
   findAllColaboradors(): void {
     this.colaboradorService.findAll().subscribe(resposta => {
-      this.colaboradors = resposta
+      this.colaboradores = resposta
+    })
+  }
+
+  findAllServicos() {
+    this.servicoService.findAll().subscribe(resposta => {
+      this.servicos = resposta
     })
   }
 
@@ -95,6 +109,7 @@ export class AgendamentoUpdateComponent implements OnInit {
     && this.observacoes.valid
     && this.colaborador.valid
     && this.cliente.valid
+    && this.servico.valid
   }
 
   retornaHorario(horario: any): string {

@@ -1,3 +1,4 @@
+import { ServicoService } from './../../../services/servico.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -9,6 +10,7 @@ import { Colaborador } from 'src/app/models/colaborador';
 import { AgendamentoService } from 'src/app/services/agendamento.service';
 import { ClienteService } from 'src/app/services/cliente.service';
 import { ColaboradorService } from 'src/app/services/colaborador.service';
+import { Servico } from 'src/app/models/servico';
 
 @Component({
   selector: 'app-agendamento-create',
@@ -19,34 +21,39 @@ export class AgendamentoCreateComponent implements OnInit {
 
   clientes:           Cliente[] = []
   colaboradores:  Colaborador[] = []
-  agendamento:    Agendamento = {
+  servicos:           Servico[] = []
 
+  agendamento:    Agendamento = {
     dataAgendada:'',
     horaAgendada:'',
     // prioridade:  '',
     // status:      '',
     titulo:      '',
     observacoes:   '',
-    colaborador:     '',
     cliente:     '',
+    colaborador:     '',
+    servico: '',
     nomeCliente: '',
-    nomeColaborador: ''
+    nomeColaborador: '',
+    nomeServico: ''
   }
 
   horaAgendada: FormControl = new FormControl(null, [Validators.required]);
   dataAgendada: FormControl = new FormControl(null, [Validators.required])
   // prioridade: FormControl = new FormControl(null, [Validators.required])
   // status:     FormControl = new FormControl(null, [Validators.required])
-  titulo:     FormControl = new FormControl(null, [Validators.required])
-  observacoes:  FormControl = new FormControl(null, [Validators.required])
-  colaborador:    FormControl = new FormControl(null, [Validators.required])
-  cliente:    FormControl = new FormControl(null, [Validators.required])
+  titulo:      FormControl = new FormControl(null, [Validators.required])
+  observacoes: FormControl = new FormControl(null, [Validators.required])
+  colaborador: FormControl = new FormControl(null, [Validators.required])
+  cliente:     FormControl = new FormControl(null, [Validators.required])
+  servico:     FormControl = new FormControl(null, [Validators.required])
 
 
   constructor(
     private agendamentoService: AgendamentoService,
     private clienteService: ClienteService,
     private colaboradorService: ColaboradorService,
+    private servicoService: ServicoService,
     private toastService:   ToastrService,
     private router:  Router
   ) { }
@@ -54,6 +61,7 @@ export class AgendamentoCreateComponent implements OnInit {
   ngOnInit(): void {
     this.findAllClientes();
     this.findAllColaboradores();
+    this.findAllServicos();
   }
 
   create(): void {
@@ -79,6 +87,12 @@ export class AgendamentoCreateComponent implements OnInit {
     })
   }
 
+  findAllServicos() {
+    this.servicoService.findAll().subscribe(resposta => {
+      this.servicos = resposta
+    })
+  }
+
 
   validaCampos(): boolean{
     return this.dataAgendada.valid
@@ -87,5 +101,6 @@ export class AgendamentoCreateComponent implements OnInit {
     && this.titulo.valid
     && this.colaborador.valid
     && this.cliente.valid
+    && this.servico.valid
   }
 }

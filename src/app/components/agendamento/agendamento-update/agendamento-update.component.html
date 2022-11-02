@@ -61,16 +61,6 @@
             </mat-select>
           </mat-form-field>
       </div> -->
-
-  <div class="colaborador">
-    <mat-form-field class="full-width" appearance="outline">
-      <mat-label>Profissional ({{ agendamento.nomeColaborador }})</mat-label>
-      <mat-select [formControl]="colaborador" required [(ngModel)]="agendamento.colaborador" name="colaborador">
-        <mat-option *ngFor="let tec of colaboradors" value="{{ tec.id }}">{{ tec.nome }}</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
-
   <div class="cliente">
     <mat-form-field class="full-width" appearance="outline">
       <mat-label>Cliente ({{agendamento.nomeCliente}})</mat-label>
@@ -79,6 +69,17 @@
       </mat-select>
     </mat-form-field>
   </div>
+
+  <div class="colaborador">
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Profissional ({{ agendamento.nomeColaborador }})</mat-label>
+      <mat-select [formControl]="colaborador" required [(ngModel)]="agendamento.colaborador" name="colaborador">
+        <mat-option *ngFor="let tec of colaboradores" value="{{ tec.id }}">{{ tec.nome }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+
 
   <form class="form">
     <mat-form-field class="full-width" appearance="outline">

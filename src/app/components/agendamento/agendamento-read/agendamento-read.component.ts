@@ -19,10 +19,12 @@ export class AgendamentoReadComponent implements OnInit {
     // status:      '',
     titulo:      '',
     observacoes:   '',
-    colaborador:     '',
     cliente:     '',
+    colaborador:     '',
+    servico: '',
     nomeCliente: '',
-    nomeColaborador: ''
+    nomeColaborador: '',
+    nomeServico: ''
   }
 
   constructor(
