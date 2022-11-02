@@ -10,7 +10,9 @@ export class AuthService {
 
   jwtService: JwtHelperService = new JwtHelperService();
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
   authenticate(creds: Credenciais) {
     return this.http.post(`${API_CONFIG.baseUrl}/login`, creds, {
@@ -19,19 +21,22 @@ export class AuthService {
     })
   }
 
-  successFulLogin(authToken: string){
+  successFulLogin(authToken: string, id: string) {
     localStorage.setItem('token', authToken)
+    localStorage.setItem('id', id)
   }
 
-  isAuthenticated(){
-      let token = localStorage.getItem('token')
-      if(token != null ){
-        return !this.jwtService.isTokenExpired(token)
-      }
-      return false
+
+
+  isAuthenticated() {
+    let token = localStorage.getItem('token')
+    if (token != null) {
+      return !this.jwtService.isTokenExpired(token)
+    }
+    return false
   }
 
-  logout(){
+  logout() {
     localStorage.clear();
   }
 }
