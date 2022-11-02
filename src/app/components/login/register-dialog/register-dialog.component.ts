@@ -17,14 +17,8 @@ export class RegisterDialogComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onNoClick(number: Number): void {
-
-    if (number === 1) {
+  onNoClick(): void {
       this.dialogRef.close();
       this.router.navigate(['../registrarcliente'])
-    } else {
-      this.dialogRef.close();
-      this.router.navigate(['../registrarservico'])
-    }
   }
 }
