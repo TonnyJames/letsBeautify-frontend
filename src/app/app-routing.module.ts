@@ -18,14 +18,14 @@ import { ColaboradorDeleteComponent } from './components/colaborador/colaborador
 import { ColaboradorListComponent } from './components/colaborador/colaborador-list/colaborador-list.component';
 import { ColaboradorUpdateComponent } from './components/colaborador/colaborador-update/colaborador-update.component';
 import { RegistrarClienteComponent } from './components/registar-button/registrar-cliente/registrar-cliente.component';
-import { RegistrarServicoComponent } from './components/registar-button/registrar-servico/registrar-servico.component';
+import { ServicoCreateComponent } from './components/servico/servico-create/servico-create.component';
+
 
 const routes: Routes = [
 
 
       { path: 'login', component: LoginComponent },
       { path: 'registrarcliente', component: RegistrarClienteComponent },
-      { path: 'registrarservico', component: RegistrarServicoComponent },
       
       {path: '', component: NavComponent, canActivate: [AuthGuard], children: [
       { path: 'home', component: HomeComponent },
@@ -39,6 +39,7 @@ const routes: Routes = [
       { path: 'clientes/create', component: ClienteCreateComponent },
       { path: 'clientes/update/:id', component: ClienteUpdateComponent },
       { path: 'clientes/delete/:id', component: ClienteDeleteComponent },
+      { path: 'servicos/create', component: ServicoCreateComponent },
 
       { path: 'agendamentos', component: AgendamentoListComponent },
       { path: 'agendamentos/create', component: AgendamentoCreateComponent },

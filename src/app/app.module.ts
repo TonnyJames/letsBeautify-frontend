@@ -51,13 +51,10 @@ import { AgendamentoListComponent } from './components/agendamento/agendamento-l
 import { AgendamentoCreateComponent } from './components/agendamento/agendamento-create/agendamento-create.component';
 import { AgendamentoUpdateComponent } from './components/agendamento/agendamento-update/agendamento-update.component';
 import { AgendamentoReadComponent } from './components/agendamento/agendamento-read/agendamento-read.component';
-
-//Import Moment
-import * as moment from 'moment';
 import { RegistrarClienteComponent } from './components/registar-button/registrar-cliente/registrar-cliente.component';
 import { RegisterDialogComponent } from './components/login/register-dialog/register-dialog.component';
 import { AuthGuard } from './auth/auth.guard';
-import { RegistrarServicoComponent } from './components/registar-button/registrar-servico/registrar-servico.component';
+import { ServicoCreateComponent} from './components/servico/servico-create/servico-create.component';
 
 @NgModule({
   declarations: [
@@ -81,7 +78,7 @@ import { RegistrarServicoComponent } from './components/registar-button/registra
     AgendamentoUpdateComponent,
     RegistrarClienteComponent,
     RegisterDialogComponent,
-    RegistrarServicoComponent,
+    ServicoCreateComponent,
   ],
   imports: [
     MatDialogModule,
