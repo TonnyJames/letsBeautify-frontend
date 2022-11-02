@@ -9,6 +9,8 @@ export interface Agendamento{
     observacoes: string;
     colaborador: any;
     cliente: any;
+    servico: any;
     nomeCliente: string;
     nomeColaborador: string;
+    nomeServico:string
 }
