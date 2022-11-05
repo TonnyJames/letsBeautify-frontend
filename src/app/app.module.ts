@@ -52,9 +52,14 @@ import { AgendamentoCreateComponent } from './components/agendamento/agendamento
 import { AgendamentoUpdateComponent } from './components/agendamento/agendamento-update/agendamento-update.component';
 import { AgendamentoReadComponent } from './components/agendamento/agendamento-read/agendamento-read.component';
 import { RegistrarClienteComponent } from './components/registar-button/registrar-cliente/registrar-cliente.component';
-import { RegisterDialogComponent } from './components/login/register-dialog/register-dialog.component';
-import { AuthGuard } from './auth/auth.guard';
 import { ServicoCreateComponent} from './components/servico/servico-create/servico-create.component';
+import { RegisterDialogComponent } from './components/login/register-dialog/register-dialog.component';
+import { ConsultaComponent } from './components/api-relatorio/consulta/consulta.component';
+import { ConsultaListComponent } from './components/api-relatorio/consulta-list/consulta-list.component';
+
+//guardas de rota
+import { AuthGuard } from './auth/auth.guard';
+
 
 @NgModule({
   declarations: [
@@ -79,6 +84,8 @@ import { ServicoCreateComponent} from './components/servico/servico-create/servi
     RegistrarClienteComponent,
     RegisterDialogComponent,
     ServicoCreateComponent,
+    ConsultaComponent,
+    ConsultaListComponent,
   ],
   imports: [
     MatDialogModule,
