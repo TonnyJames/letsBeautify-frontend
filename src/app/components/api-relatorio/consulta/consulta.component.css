@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=The+Nautigal&display=swap');
+
+.container {
+    height:100%;
+    background: linear-gradient(174deg, rgba(43,34,35,1) 42%, rgba(173,23,40,1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    width: 30%;
+    height: 70%;
+    margin: auto;
+    background-color: white;
+    padding: 4rem 1rem;
+    border-radius: 1rem;
+}
+
+h1 {
+    width: 100%;
+    text-align: center;
+    font-family: 'The Nautigal', cursive;
+    font-size: 4rem;
+}
+
+h4 {
+    font-family: 'The Nautigal', cursive;
+    font-size: large;
+}
+
+img {
+    /* height: 25%; */
+    width: 100%;
+    /* margin-left: auto; */
+    /* padding-bottom: 2rem; */
+    /* padding-top: 1rem; */
+}
+
+.full-width {
+    width: 100%;
+}
+
+button {
+    margin-top: 1rem;
+    width: 50%;
+    margin-left: 25%;
+    color: #F25774;
+}
+
+.centralizado {
+    /* margin-top: 1rem; */
+    text-align: center;
+}
+
+mat-icon {
+    opacity: .6;
+}
+
+.linkAPI {
+    text-decoration: solid;
+    font-family: none;
+}
+
+.sign {
+    
+    text-align: center;
+    margin: 0;
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+    opacity: 60%;
+}
+
+.sign a {
+    text-decoration: none;
+    color: maroon;
+}
