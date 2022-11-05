@@ -44,7 +44,7 @@ export class RegistrarClienteComponent implements OnInit {
   create(): void {
     this.service.create(this.cliente).subscribe(() => {
       this.toast.success('Você foi registrado com sucesso', 'Cadastro');
-      this.router.navigate(['../'])
+      this.router.navigate(['/login'])
     }), ex => {
       if(ex.error.errors){
         ex.error.errors.fotEach(element =>{
