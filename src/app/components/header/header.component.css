@@ -6,9 +6,15 @@
 }
 
 h1 {
+    margin-left:auto;
+    margin-right:20%;
     margin-top: 1rem;
     border: 1px solid #F25774;
     padding: 1rem 10%;
     border-radius: 2rem;
     color: #F25774;
+}
+
+.nomeUser {
+    margin-right: 2rem;
 }

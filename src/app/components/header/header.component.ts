@@ -1,3 +1,5 @@
+import { ClienteService } from 'src/app/services/cliente.service';
+import { Cliente } from 'src/app/models/cliente';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  usuarioLogado: Cliente;
+
+  constructor(
+    private clienteService: ClienteService
+  ) { }
 
   ngOnInit(): void {
+    this.findAdmin();
+  }
+
+  findAdmin(): void {
+    let id = localStorage.getItem('id');
+    this.clienteService.findById(id).subscribe(resposta => {
+      this.usuarioLogado = resposta;
+      this.usuarioLogado.nome
+    })
   }
 
 }
