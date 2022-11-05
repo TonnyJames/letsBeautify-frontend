@@ -1,7 +1,10 @@
+import { ConsultaListComponent } from './components/api-relatorio/consulta-list/consulta-list.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from "@angular/common";
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth/auth.guard';
+
+//componentes da aplicação
 import { AgendamentoCreateComponent } from './components/agendamento/agendamento-create/agendamento-create.component'; 
 import { AgendamentoListComponent } from './components/agendamento/agendamento-list/agendamento-list.component';
 import { AgendamentoReadComponent } from './components/agendamento/agendamento-read/agendamento-read.component';
@@ -19,6 +22,8 @@ import { ColaboradorListComponent } from './components/colaborador/colaborador-l
 import { ColaboradorUpdateComponent } from './components/colaborador/colaborador-update/colaborador-update.component';
 import { RegistrarClienteComponent } from './components/registar-button/registrar-cliente/registrar-cliente.component';
 import { ServicoCreateComponent } from './components/servico/servico-create/servico-create.component';
+import { ConsultaComponent } from './components/api-relatorio/consulta/consulta.component';
+
 
 
 const routes: Routes = [
@@ -26,6 +31,9 @@ const routes: Routes = [
 
       { path: 'login', component: LoginComponent },
       { path: 'registrarcliente', component: RegistrarClienteComponent },
+      { path: 'consulta', component: ConsultaComponent},
+      { path: 'api/:cpf', component: ConsultaListComponent},
+      { path: 'agendamentos/read/:id', component: AgendamentoReadComponent },
       
       {path: '', component: NavComponent, canActivate: [AuthGuard], children: [
       { path: 'home', component: HomeComponent },
@@ -44,7 +52,7 @@ const routes: Routes = [
       { path: 'agendamentos', component: AgendamentoListComponent },
       { path: 'agendamentos/create', component: AgendamentoCreateComponent },
       { path: 'agendamentos/:id', component: AgendamentoUpdateComponent },
-      { path: 'agendamentos/read/:id', component: AgendamentoReadComponent }
+      
     ]
   }
 ];
