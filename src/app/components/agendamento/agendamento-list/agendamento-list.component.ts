@@ -1,3 +1,6 @@
+import { Cliente } from 'src/app/models/cliente';
+import { ClienteService } from 'src/app/services/cliente.service';
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
@@ -20,17 +23,30 @@ export class AgendamentoListComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
 
-  constructor(private service: AgendamentoService) { }
+  constructor(
+    private agendamentoService: AgendamentoService,
+    private clienteService: ClienteService
+  ) { }
 
   ngOnInit(): void {
-    this.findAll();
+    this.findByCliente();
   }
 
   findAll(): void {
-    this.service.findAll().subscribe(resposta => {
+    this.agendamentoService.findAll().subscribe(resposta => {
       this.ELEMENT_DATA = resposta;
       this.dataSource = new MatTableDataSource<Agendamento>(this.ELEMENT_DATA);
       this.dataSource.paginator = this.paginator;
+    })
+  }
+
+  findByCliente(): void {
+    this.clienteService.findById(localStorage.getItem("id")).subscribe(retorno => {
+      this.agendamentoService.findByCpf(retorno.cpf).subscribe(resposta => {
+        this.ELEMENT_DATA = resposta;
+        this.dataSource = new MatTableDataSource<Agendamento>(this.ELEMENT_DATA);
+        this.dataSource.paginator = this.paginator;
+      })
     })
   }
 
@@ -40,7 +56,7 @@ export class AgendamentoListComponent implements OnInit {
   // }
 
   retornaHorario(horario: any): string {
-          if (horario == 1) {
+    if (horario == 1) {
       return '09:00 às 10:00'
     } else if (horario == 2) {
       return '10:00 às 11:00'
