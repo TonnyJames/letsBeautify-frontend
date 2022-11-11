@@ -25,9 +25,7 @@ export class ConsultaComponent implements OnInit {
   }
 
   consultar() {
-    // this.service.findByCpf(this.cpf).subscribe(resposta => {})
     this.router.navigate(['/api/'+ this.cpf])
-    console.log("consultar clicado")
   }
   
 
