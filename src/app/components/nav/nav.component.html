@@ -2,12 +2,12 @@
     <mat-drawer #drawer class="sidenav" mode="side">
         <img src="assets/img/letsLogo.jpeg" alt="img de navegação">
         <mat-nav-list class="nav-list">
+            <div mat-raised-button matTooltip="Pagina inicial">
             <a mat-list-item [routerLink]="['home']">
                 <i class="material-icons">home</i>
-                Home
+                Início
             </a>
-        </mat-nav-list>
-        <mat-nav-list class="nav-list">
+            </div>
             <!-- <a mat-list-item [routerLink]="['colaboradores']">
                 <i class="material-icons">account_circle</i>
                 Profissionais
@@ -16,32 +16,38 @@
                 <i class="material-icons">person</i>
                 Clientes
             </a> -->
-            <a mat-list-item [routerLink]="['']">
-                <i class="material-icons">apartment</i>
-                Serviços
-            </a>
-            <a mat-list-item [routerLink]="['agendamentos']">
-                <i class="material-icons">support</i>
-                Meus Agendamentos
-            </a>
-            <a mat-list-item [routerLink]="['/servicos/create']">
-                <i class="material-icons"><span class="material-symbols-outlined">
-                    switch_access_shortcut
-                    </span></i>
-                Criar novo Serviço
-            </a>
-        </mat-nav-list>
+            <div mat-raised-button matTooltip="Veja os estabelecimentos disponiveis no app">
+                <a mat-list-item [routerLink]="['servicos']">
+                    <i class="material-icons">apartment</i>
+                    Serviços
+                </a>
+            </div>
+            <div mat-raised-button matTooltip="Veja um resumo de todos os seus agendamentos">
+                <a mat-list-item [routerLink]="['agendamentos']">
+                    <i class="material-icons">support</i>
+                    Meus Agendamentos
+                </a>
+            </div>
+            <div mat-raised-button matTooltip="Cadastre seu estabelecimento aqui para atender seus clientes">
+                <a mat-list-item [routerLink]="['/servicos/create']">
+                    <i class="material-icons"><span class="material-symbols-outlined">
+                            switch_access_shortcut
+                        </span></i>
+                    Criar novo Serviço
+                </a>
+            </div>
         <!-- <mat-nav-list class="nav-list">
             <a mat-list-item href="https://github.com/TonnyJames" target="_blank">
                 <i class="material-icons">code</i>
                 Github
             </a>
         </mat-nav-list> -->
-        <mat-nav-list class="nav-list">
+        <div mat-raised-button matTooltip="Finalizar sua sessão no app">
             <a mat-list-item (click)=logout()>
                 <i class="material-icons">logout</i>
                 Sair
             </a>
+        </div>
         </mat-nav-list>
     </mat-drawer>
 
