@@ -29,6 +29,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
+import {MatTooltipModule} from '@angular/material/tooltip';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
 import { NgxMaskModule } from 'ngx-mask';
@@ -56,8 +57,11 @@ import { ServicoCreateComponent} from './components/servico/servico-create/servi
 import { RegisterDialogComponent } from './components/login/register-dialog/register-dialog.component';
 import { ConsultaComponent } from './components/api-relatorio/consulta/consulta.component';
 import { ConsultaListComponent } from './components/api-relatorio/consulta-list/consulta-list.component';
+import { ServicoListComponent } from './components/servico/servico-list/servico-list.component';
 
-//guardas de rota
+
+
+//guardas de rotas
 import { AuthGuard } from './auth/auth.guard';
 
 
@@ -72,7 +76,6 @@ import { AuthGuard } from './auth/auth.guard';
     ColaboradorCreateComponent,
     ColaboradorUpdateComponent,
     ColaboradorDeleteComponent,
-
     ClienteCreateComponent,
     ClienteDeleteComponent,
     ClienteListComponent,
@@ -86,6 +89,7 @@ import { AuthGuard } from './auth/auth.guard';
     ServicoCreateComponent,
     ConsultaComponent,
     ConsultaListComponent,
+    ServicoListComponent
   ],
   imports: [
     MatDialogModule,
@@ -113,6 +117,7 @@ import { AuthGuard } from './auth/auth.guard';
         MatIconModule,
         MatListModule,
         MatCardModule,
+        MatTooltipModule,
         MatDatepickerModule,
         MatNativeDateModule,
         ToastrModule.forRoot({
