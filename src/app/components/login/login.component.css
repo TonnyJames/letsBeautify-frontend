@@ -6,6 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 
 .form {
@@ -15,7 +16,9 @@
     background-color: white;
     padding: 4rem 1rem;
     border-radius: 1rem;
+    box-shadow: 4px 4px 4px 4px black;
 }
+
 
 h1 {
     width: 100%;
@@ -46,6 +49,10 @@ button {
     width: 50%;
     margin-left: 25%;
     color: #F25774;
+    
+}
+.button:hover{
+    transform: translateY(-5px)
 }
 
 .centralizado {

@@ -1,6 +1,14 @@
-<mat-drawer-container class="container" autosize>
+
+<mat-sidenav-container class="container" autosize>
+    
     <mat-drawer #drawer class="sidenav" mode="side">
-        <img src="assets/img/letsLogo.jpeg" alt="img de navegação">
+        
+        <img src="assets/img/logo p bco.png" alt="img login">
+        <mat-nav-list class="nav-list">
+        </mat-nav-list>
+            <div style="text-align:right">
+                <button (click)="drawer.toggle()" id="btnclose">x</button> 
+            </div>
         <mat-nav-list class="nav-list">
             <div mat-raised-button matTooltip="Pagina inicial">
             <a mat-list-item [routerLink]="['home']">
@@ -59,4 +67,5 @@
         <router-outlet></router-outlet>
     </div>
 
-</mat-drawer-container>
+</mat-sidenav-container>
+
