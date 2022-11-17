@@ -1,3 +1,4 @@
+import { ServicoListComponent } from './components/servico/servico-list/servico-list.component';
 import { ConsultaListComponent } from './components/api-relatorio/consulta-list/consulta-list.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from "@angular/common";
@@ -42,6 +43,8 @@ const routes: Routes = [
       { path: 'colaboradores/create', component: ColaboradorCreateComponent },
       { path: 'colaboradores/update/:id', component: ColaboradorUpdateComponent },
       { path: 'colaboradores/delete/:id', component: ColaboradorDeleteComponent },
+
+      { path: 'servicos', component: ServicoListComponent },
 
       { path: 'clientes', component: ClienteListComponent },
       { path: 'clientes/create', component: ClienteCreateComponent },
