@@ -14,21 +14,26 @@
 
         <mat-form-field class="full-width" appearance="outline">
             <mat-label>Senha</mat-label>
-            <input  [formControl]=senha required [(ngModel)]="creds.senha" name="senha" type="password" matInput
+            <input [formControl]=senha required [(ngModel)]="creds.senha" name="senha" type="password" matInput
                 placeholder="Ex. 123">
             <mat-icon matSuffix>password</mat-icon>
         </mat-form-field>
 
-        <button (click)="logar()" [disabled]="!validaCampos()" class="mat-elevation-z4" mat-stroked-button
+        <button mat-raised-button matTooltip="Click para iniciar sua sessão" matTooltipPosition="after"
+            (click)="logar()" [disabled]="!validaCampos()" class="mat-elevation-z4" mat-stroked-button
             color="white">Login</button>
 
-            <h3 class="full-width centralizado">ou</h3>
-            <h3 class="full-width centralizado" (click)="escolherTipoRegistro()">Registre-se</h3>
+        <h3 class="full-width centralizado">ou</h3>
+        
+        <div class="full-width centralizado">
+            <a  (click)="escolherTipoRegistro()">Registre-se</a>
+        </div>
+        <h4 class="full-width centralizado linkAPI"><a [routerLink]="['/consulta']">Click aqui</a> para fazer uma
+            consulta pública sobre agendamentos em seu CPF.</h4>
+        <!-- para chamar rota do registro: <a [routerLink]="['../registrar']"></a> -->
 
-            <h4 class="full-width centralizado linkAPI"><a [routerLink]="['/consulta']" >Click aqui</a> para fazer uma consulta pública sobre agendamentos em seu CPF.</h4>
-            <!-- para chamar rota do registro: <a [routerLink]="['../registrar']"></a> -->
-
-            <p class="fullwidth sign"><a href="https://github.com/TonnyJames"target="_blank">Desenvolvido por: Tonny Reis</a></p>
+        <p class="fullwidth sign"><a href="https://github.com/TonnyJames" target="_blank">Desenvolvido por: Tonny
+                Reis</a></p>
     </form>
 
 </div>
