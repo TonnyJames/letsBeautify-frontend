@@ -1,26 +1,31 @@
 .container {
-    display        : flex;
-    align-items    : center;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    /* background  : linear-gradient(174deg, rgba(43,34,35,1) 42%, rgba(173,23,40,1) 100%); */
-    background     : rgb(223, 131, 131);
-
+    background: black;
+    /* background: black; */
 }
 
 .nomeUser {
     margin-right: 2rem;
+    width: fit-content;
+    color: white;
+}
+#user{
+    color:white;
+    
 }
 
 img {
-    margin-top      : 2rem;
-    border          : 1px solid #F25774;
-    padding         : 1rem 10%;
-    border-radius   : 2rem;
-    color           : #f8768e;
-    width           : 35%;
-    text-align      : center;
-    background-color: rgb(233, 183, 183);
-    box-shadow      : violet;
+    margin-top: 2rem;
+    border: 1px solid grey;
+    padding: 1rem 10%;
+    border-radius: 2rem;
+    color: ;
+    width: 35%;
+    text-align: center;
+    background: linear-gradient(174deg, rgba(43,34,35,1) 42%, rgba(173,23,40,1) 100%);
+    box-shadow      : grey;
 }
 
 .btnMenu:hover {
@@ -38,6 +43,5 @@ img {
     margin       : 0 auto;
     padding      : 0.5em;
     /* text-align: left; */
-
-
 }
+

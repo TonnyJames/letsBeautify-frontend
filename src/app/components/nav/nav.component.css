@@ -1,20 +1,18 @@
-:root {
-    --primarycolor: #0ad0f9ff;
+body{
+    width: 100%;
 }
-
-
 .container{
     height: 100%;
-    background: rgb(223, 131, 131);
+    background: black;
+
 }
 .sidenav{
     width: 13rem;
-    color: white;
+    color: blue;
     background: linear-gradient(174deg, rgba(43,34,35,1) 42%, rgba(173,23,40,1) 100%);
-    mask-image: ;
 }
 .sidenav:hover{
-    background-color: var(--primarycolor);
+    background-color: black;
     transition: background 0.3s;
 }
 
@@ -37,7 +35,7 @@ img{
 .menu {
     margin: 0 0 0.5rem 1rem;
     color: whitesmoke;
-    background: black;
+    background: var(--background);
 }
 .menu:hover{
     transition: background .5s;
@@ -45,7 +43,7 @@ img{
     cursor: pointer;
 }
 .menu:active{
-    background-color: blueviolet;
+    background-color:;
 }
 :root{
     --menu-size: 250px;
@@ -67,10 +65,9 @@ img{
     font-weight: bold;
 }
 #btnclose:hover{
-    opacity: 0.2;
+    /opacity: 0.2;
     cursor: pointer;
     transition: background 0.2s;
-}  
-#btnclose:active{
-    background-color: rgb(59, 22, 22);
 }
+
+
