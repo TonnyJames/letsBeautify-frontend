@@ -7,7 +7,7 @@ export interface Agendamento{
     // status?: string;
     titulo: string;
     observacoes: string;
-    colaborador: any;
+    // colaborador: any;
     cliente: any;
     servico: any;
     nomeCliente: string;
