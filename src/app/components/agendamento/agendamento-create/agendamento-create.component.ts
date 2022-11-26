@@ -1,7 +1,7 @@
 import { ServicoService } from './../../../services/servico.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import * as moment from 'moment';
 import { ToastrService } from 'ngx-toastr';
 import { Agendamento } from 'src/app/models/agendamento';
@@ -18,11 +18,12 @@ import { Servico } from 'src/app/models/servico';
   styleUrls: ['./agendamento-create.component.css']
 })
 export class AgendamentoCreateComponent implements OnInit {
+  // colaboradores:  Colaborador[] = []
 
-  clientes:           Cliente[] = []
-  colaboradores:  Colaborador[] = []
-  servicos:           Servico[] = []
-
+  idServico:      String = ''
+  idCliente:      String = ''
+  cliente:        Cliente
+  servico:        Servico
   agendamento:    Agendamento = {
     dataAgendada:'',
     horaAgendada:'',
@@ -31,7 +32,7 @@ export class AgendamentoCreateComponent implements OnInit {
     titulo:      '',
     observacoes:   '',
     cliente:     '',
-    colaborador:     '',
+    // colaborador:     '',
     servico: '',
     nomeCliente: '',
     nomeColaborador: '',
@@ -43,25 +44,29 @@ export class AgendamentoCreateComponent implements OnInit {
   // prioridade: FormControl = new FormControl(null, [Validators.required])
   // status:     FormControl = new FormControl(null, [Validators.required])
   titulo:      FormControl = new FormControl(null, [Validators.required])
-  observacoes: FormControl = new FormControl(null, [Validators.required])
-  colaborador: FormControl = new FormControl(null, [Validators.required])
-  cliente:     FormControl = new FormControl(null, [Validators.required])
-  servico:     FormControl = new FormControl(null, [Validators.required])
+  // observacoes: FormControl = new FormControl(null, [Validators.required])
+  // colaborador: FormControl = new FormControl(null, [Validators.required])
+  // cliente:     FormControl = new FormControl(null, [Validators.required])
+  // servicos:     FormControl = new FormControl(null, [Validators.required])
 
 
   constructor(
     private agendamentoService: AgendamentoService,
-    private clienteService: ClienteService,
-    private colaboradorService: ColaboradorService,
-    private servicoService: ServicoService,
-    private toastService:   ToastrService,
-    private router:  Router
+    private clienteService:     ClienteService,
+    // private colaboradorService: ColaboradorService,
+    private servicoService:     ServicoService,
+    private toastService:       ToastrService,
+    private router:             Router,
+    private route:              ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-    this.findAllClientes();
-    this.findAllColaboradores();
-    this.findAllServicos();
+    this.idServico = this.route.snapshot.paramMap.get('id');
+    this.idCliente = localStorage.getItem("id")
+    // this.findAllClientes();
+    this.findClienteById();
+    // this.findAllColaboradores();
+    this.findServicoById();
   }
 
   create(): void {
@@ -75,21 +80,29 @@ export class AgendamentoCreateComponent implements OnInit {
     })
   }
 
-  findAllClientes(): void {
-    this.clienteService.findAll().subscribe(resposta => {
-      this.clientes = resposta;
+  // findAllClientes(): void {
+  //   this.clienteService.findAll().subscribe(resposta => {
+  //     this.clientes = resposta;
+  //   })
+  // }
+
+  findClienteById(): void {
+    this.clienteService.findById(this.idCliente).subscribe(resposta => {
+      this.agendamento.cliente = resposta.id
+      this.cliente = resposta
     })
   }
 
-  findAllColaboradores(): void {
-    this.colaboradorService.findAll().subscribe(resposta => {
-      this.colaboradores = resposta
-    })
-  }
+  // findAllColaboradores(): void {
+  //   this.colaboradorService.findAll().subscribe(resposta => {
+  //     this.colaboradores = resposta
+  //   })
+  // }
 
-  findAllServicos() {
-    this.servicoService.findAll().subscribe(resposta => {
-      this.servicos = resposta
+  findServicoById() {
+    this.servicoService.findById(this.idServico).subscribe(resposta => {
+      this.agendamento.servico = resposta.id
+      this.servico = resposta
     })
   }
 
@@ -99,8 +112,6 @@ export class AgendamentoCreateComponent implements OnInit {
     //&& this.status.valid
     && this.horaAgendada.valid
     && this.titulo.valid
-    && this.colaborador.valid
-    && this.cliente.valid
-    && this.servico.valid
+    // && this.colaborador.valid
   }
 }
