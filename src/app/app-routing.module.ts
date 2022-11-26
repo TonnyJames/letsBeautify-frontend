@@ -55,7 +55,7 @@ const routes: Routes = [
       { path: 'servicos/create', component: ServicoCreateComponent },
 
       { path: 'agendamentos', component: AgendamentoListComponent },
-      { path: 'agendamentos/create', component: AgendamentoCreateComponent },
+      { path: 'agendamentos/create/:id', component: AgendamentoCreateComponent },
       { path: 'agendamentos/:id', component: AgendamentoUpdateComponent },
       
     ]
