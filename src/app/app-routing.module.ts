@@ -1,3 +1,4 @@
+import { ServicoReadComponent } from './components/servico/servico-read/servico-read.component';
 import { ServicoListComponent } from './components/servico/servico-list/servico-list.component';
 import { ConsultaListComponent } from './components/api-relatorio/consulta-list/consulta-list.component';
 import { NgModule } from '@angular/core';
@@ -45,6 +46,7 @@ const routes: Routes = [
       { path: 'colaboradores/delete/:id', component: ColaboradorDeleteComponent },
 
       { path: 'servicos', component: ServicoListComponent },
+      { path: 'servicos/read/:id', component: ServicoReadComponent},
 
       { path: 'clientes', component: ClienteListComponent },
       { path: 'clientes/create', component: ClienteCreateComponent },

@@ -63,6 +63,7 @@ import { ServicoListComponent } from './components/servico/servico-list/servico-
 
 //guardas de rotas
 import { AuthGuard } from './auth/auth.guard';
+import { ServicoReadComponent } from './components/servico/servico-read/servico-read.component';
 
 
 @NgModule({
@@ -89,7 +90,8 @@ import { AuthGuard } from './auth/auth.guard';
     ServicoCreateComponent,
     ConsultaComponent,
     ConsultaListComponent,
-    ServicoListComponent
+    ServicoListComponent,
+    ServicoReadComponent
   ],
   imports: [
     MatDialogModule,
