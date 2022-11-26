@@ -22,7 +22,6 @@ export class ServicoReadComponent implements OnInit {
     dataCriacao: '',
     admin: '',
     nomeAdmin: '',
-    agendamentos: []
   }
 
   constructor(
