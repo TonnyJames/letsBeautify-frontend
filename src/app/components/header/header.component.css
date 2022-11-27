@@ -5,15 +5,17 @@
     background: black;
     /* background: black; */
 }
+#section{
+    margin-left: 10px;
+}
 
 .nomeUser {
-    margin-right: 2rem;
+    margin-left: 0.5rem;
     width: fit-content;
     color: white;
 }
 #user{
-    color:white;
-    
+    color:white;    
 }
 
 img {
