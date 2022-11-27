@@ -6,7 +6,10 @@
         <mat-nav-list class="nav-list">
         </mat-nav-list>
         <mat-nav-list class="nav-list">
-            <div mat-raised-button matTooltip="Pagina inicial">
+            <div mat-raised-button matTooltip="Fechar Menu" style="text-align:right" matTooltipPosition="right">
+                <button (click)="drawer.toggle()" id="btnclose">X</button> 
+            </div>
+            <div mat-raised-button matTooltip="Pagina inicial" >
             <a mat-list-item [routerLink]="['home']">
                 <i class="material-icons">home</i>
                 Início
@@ -39,9 +42,6 @@
                         </span></i>
                     Criar novo Serviço
                 </a>
-            </div>
-            <div style="text-align:right">
-                <button (click)="drawer.toggle()" id="btnclose"><h5>FECHAR MENU</h5></button> 
             </div>
         <!-- <mat-nav-list class="nav-list">
             <a mat-list-item href="https://github.com/TonnyJames" target="_blank">
