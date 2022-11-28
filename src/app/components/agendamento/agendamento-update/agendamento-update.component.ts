@@ -21,9 +21,7 @@ import { ThrowStmt } from '@angular/compiler';
 export class AgendamentoUpdateComponent implements OnInit {
   clientes: Cliente[] = []
   colaboradores: Colaborador[] = []
-  servicos: Servico[] = []
   agendamento: Agendamento = {
-
     titulo:      '',
     dataAgendada: '',
     horaAgendada:'',
@@ -31,7 +29,7 @@ export class AgendamentoUpdateComponent implements OnInit {
     // status:      '',
     observacoes:   '',
     cliente:     '',
-    colaborador:     '',
+    // colaborador:     '',
     servico: '',
     nomeCliente: '',
     nomeColaborador: '',
@@ -41,10 +39,10 @@ export class AgendamentoUpdateComponent implements OnInit {
   titulo:     FormControl = new FormControl(null, [Validators.required])
   dataAgendada: FormControl = new FormControl(null, [Validators.required])
   horaAgendada: FormControl = new FormControl(null, [Validators.required])
-  observacoes:  FormControl = new FormControl(null, [Validators.required])
-  colaborador:    FormControl = new FormControl(null, [Validators.required])
-  cliente:    FormControl = new FormControl(null, [Validators.required])
-  servico: FormControl = new FormControl(null, [Validators.required])
+  // observacoes:  FormControl = new FormControl(null, [Validators.required])
+  // colaborador:    FormControl = new FormControl(null, [Validators.required])
+  // cliente:    FormControl = new FormControl(null, [Validators.required])
+  // servico: FormControl = new FormControl(null, [Validators.required])
 
 
   constructor(
@@ -59,12 +57,13 @@ export class AgendamentoUpdateComponent implements OnInit {
 
   ngOnInit(): void {
     this.agendamento.id = this.route.snapshot.paramMap.get('id');
-    this.findById();
-    this.findAllClientes();
-    this.findAllColaboradors();
+    this.findAgendamentoById();
+    // this.findAllServicos();
+    // this.findAllClientes();
+    // this.findAllColaboradors();
   }
 
-  findById(): void{
+  findAgendamentoById(): void{
     this.agendamentoService.findById(this.agendamento.id).subscribe(resposta => {
       this.agendamento = resposta;
     }, ex => {
@@ -97,19 +96,17 @@ export class AgendamentoUpdateComponent implements OnInit {
 
   findAllServicos() {
     this.servicoService.findAll().subscribe(resposta => {
-      this.servicos = resposta
+      // this.servico = resposta
     })
   }
-
 
   validaCampos(): boolean{
     return this.dataAgendada.valid
     && this.horaAgendada.valid
     && this.titulo.valid
-    && this.observacoes.valid
-    && this.colaborador.valid
-    && this.cliente.valid
-    && this.servico.valid
+    // && this.observacoes.valid
+    // && this.cliente.valid
+    // && this.servico.valid
   }
 
   retornaHorario(horario: any): string {

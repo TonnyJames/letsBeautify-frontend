@@ -8,5 +8,4 @@ export interface Servico {
     dataCriacao: any;
     admin: any;
     nomeAdmin: string;
-    // agendamentos: string[]
 }

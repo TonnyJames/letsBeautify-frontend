@@ -20,7 +20,7 @@ export class AgendamentoReadComponent implements OnInit {
     titulo:      '',
     observacoes:   '',
     cliente:     '',
-    colaborador:     '',
+    // colaborador:     '',
     servico: '',
     nomeCliente: '',
     nomeColaborador: '',
