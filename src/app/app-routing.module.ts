@@ -35,7 +35,7 @@ const routes: Routes = [
       { path: 'registrarcliente', component: RegistrarClienteComponent },
       { path: 'consulta', component: ConsultaComponent},
       { path: 'api/:cpf', component: ConsultaListComponent},
-      { path: 'agendamentos/read/:id', component: AgendamentoReadComponent },
+      { path: 'agendamento/read/:id', component: AgendamentoReadComponent },
       
       {path: '', component: NavComponent, canActivate: [AuthGuard], children: [
       { path: 'home', component: HomeComponent },
@@ -47,16 +47,18 @@ const routes: Routes = [
 
       { path: 'servicos', component: ServicoListComponent },
       { path: 'servicos/read/:id', component: ServicoReadComponent},
+      { path: 'servicos/create', component: ServicoCreateComponent },
 
       { path: 'clientes', component: ClienteListComponent },
       { path: 'clientes/create', component: ClienteCreateComponent },
       { path: 'clientes/update/:id', component: ClienteUpdateComponent },
       { path: 'clientes/delete/:id', component: ClienteDeleteComponent },
-      { path: 'servicos/create', component: ServicoCreateComponent },
+      
 
       { path: 'agendamentos', component: AgendamentoListComponent },
       { path: 'agendamentos/create/:id', component: AgendamentoCreateComponent },
       { path: 'agendamentos/:id', component: AgendamentoUpdateComponent },
+      { path: 'agendamentos/read/:id', component: AgendamentoReadComponent }
       
     ]
   }
