@@ -3,6 +3,11 @@
     margin: auto auto 3rem auto;
     padding: 1rem;
     border-radius: 1rem;
+    background-color: white;
+}
+
+.mat-icon {
+    opacity: 60%;
 }
 
 .fullwidth{
@@ -45,5 +50,5 @@ button {
 
 .sign a {
     text-decoration: none;
-    color: maroon;
+    color: white;
 }

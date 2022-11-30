@@ -1,6 +1,6 @@
 .container {
     height:100%;
-    background: linear-gradient(174deg, rgba(43,34,35,1) 42%, rgba(173,23,40,1) 100%);
+    background-color: black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -47,7 +47,6 @@ p {
 
 mat-icon {
     opacity: .6;
-    color: red;
 }
 
 .sign {

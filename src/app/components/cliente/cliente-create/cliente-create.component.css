@@ -3,6 +3,7 @@
     margin: auto;
     padding: 1rem, 1rem, 3rem, 1rem;
     border-radius: .6rem;
+    background-color: black;
 }
 
 .fullwidth {
@@ -38,7 +39,6 @@ p {
 
 mat-icon {
     opacity: .6;
-    color: red;
 }
 
 .sign {

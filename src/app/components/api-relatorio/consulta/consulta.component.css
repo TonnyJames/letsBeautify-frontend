@@ -3,13 +3,12 @@
 .container {
     height:100%;
     background: linear-gradient(174deg, rgba(43,34,35,1) 42%, rgba(173,23,40,1) 100%);
-    display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .form {
-    width: 30%;
+    width: 60%;
     height: 70%;
     margin: auto;
     background-color: white;
@@ -62,6 +61,12 @@ mat-icon {
     font-family: none;
 }
 
+.exemplo {
+    display: inline;
+    float: left;
+    justify-content: left;
+}
+
 .sign {
     
     text-align: center;
@@ -73,5 +78,5 @@ mat-icon {
 
 .sign a {
     text-decoration: none;
-    color: maroon;
+    color: white;
 }

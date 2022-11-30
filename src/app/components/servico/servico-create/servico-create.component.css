@@ -1,10 +1,11 @@
-
-
 .container {
-    width: 35rem;
-    margin: auto auto 3rem auto;
-    padding: 1rem, 1rem, 3rem, 1rem;
-    border-radius: .6rem;
+    width : 80%;
+    margin: auto;
+    background-color: black;
+}
+
+mat-card {
+    background-color: white;
 }
 
 .fullwidth {
@@ -40,7 +41,6 @@ p {
 
 mat-icon {
     opacity: .6;
-    color: red;
 }
 
 .inline{
@@ -58,5 +58,5 @@ mat-icon {
 
 .sign a {
     text-decoration: none;
-    color: maroon;
+    color: white;
 }
