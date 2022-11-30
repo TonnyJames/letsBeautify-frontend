@@ -1,11 +1,10 @@
-<mat-card>
-  <div class="container mat-elevation-z8">
+<div class="container mat-elevation-z8">
+  <mat-card>
     <div>
       <form action="" class="form">
-        <h1 class="fullwidth">Cadastrar Novo Serviço de Estética</h1>
+        <h1 class="fullwidth">Cadastrar Novo Estabelecimento</h1>
         <!-- <img class="fullwidth" src="assets/img/faders.png" alt="image-create"> -->
-
-        <div class="inline">
+        <p>
           <mat-form-field appearance="outline">
             <mat-label>Categoria</mat-label>
             <mat-select [(ngModel)]="servico.categoria" name="categoria" [formControl]="categoria" required>
@@ -17,14 +16,14 @@
 
           <mat-form-field appearance="outline">
             <mat-label>Administrador </mat-label>
-            <input matInput [disabled]="true" [(ngModel)]="servico.nomeAdmin" name="nomeAdmin"  matInput>
+            <input matInput [disabled]="true" [(ngModel)]="servico.nomeAdmin" name="nomeAdmin" matInput>
           </mat-form-field>
-
-          <!-- <mat-form-field appearance="outline">
+        </p>
+        <!-- <mat-form-field appearance="outline">
             <mat-label>Admin ID </mat-label>
             <input matInput [disabled]="true" [(ngModel)]="servico.admin" name="admin"  matInput>
           </mat-form-field> -->
-        </div>
+
         <p>
           <mat-form-field class="fullwidth" appearance="legacy">
             <mat-label>Nome Comercial:</mat-label>
@@ -69,7 +68,6 @@
         </p>
       </form>
     </div>
-    <p class="fullwidth sign"><a href="https://github.com/TonnyJames" target="_blank">Desenvolvido por: Tonny Reis</a></p>
-  </div>
-</mat-card>
-<p class="fullwidth sign"><a href="https://github.com/TonnyJames"target="_blank">Desenvolvido por: Tonny Reis</a></p>
+  </mat-card>
+  <p class="fullwidth sign"><a href="https://github.com/TonnyJames" target="_blank">Desenvolvido por: Tonny Reis</a></p>
+</div>

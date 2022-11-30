@@ -24,16 +24,18 @@
             color="white">Login</button>
 
         <h3 class="full-width centralizado">ou</h3>
-        
-        <div class="full-width centralizado">
-            <a  (click)="escolherTipoRegistro()">Registre-se</a>
-        </div>
-        <h4 class="full-width centralizado linkAPI"><a [routerLink]="['/consulta']">Click aqui</a> para fazer uma
-            consulta pública sobre agendamentos em seu CPF.</h4>
-        <!-- para chamar rota do registro: <a [routerLink]="['../registrar']"></a> -->
 
-        <p class="fullwidth sign"><a href="https://github.com/TonnyJames" target="_blank">Desenvolvido por: Tonny
-                Reis</a></p>
+        <h4 class="full-width centralizado link"><a (click)="escolherTipoRegistro()">Registre-se</a></h4>
+
     </form>
+    <h4 class="full-width centralizado linkAPI"><a [routerLink]="['/consulta']">Click aqui</a> para fazer uma
+        consulta pública sobre agendamentos em seu CPF.</h4>
+    <!-- para chamar rota do registro: <a [routerLink]="['../registrar']"></a> -->
+
+
+
+    <p class="fullwidth sign"><a href="https://github.com/TonnyJames" target="_blank">Desenvolvido por: Tonny
+            Reis</a></p>
+
 
 </div>

@@ -1,19 +1,21 @@
-<mat-sidenav-container class="container" autosize>
-    
-    <mat-drawer #drawer class="sidenav" mode="side">
-        
-        <img src="assets/img/logo p bco.png" alt="img login">
-        <mat-nav-list class="nav-list">
-        </mat-nav-list>
+<mat-sidenav-container class="container">
+
+    <mat-drawer (click)="drawer.toggle()" #drawer class="sidenav" mode="side">
+
+        <div class="box-image">
+            <img src="assets/img/logo p bco.png" alt="img login">
+        </div>
         <mat-nav-list class="nav-list">
             <div mat-raised-button matTooltip="Fechar Menu" style="text-align:right" matTooltipPosition="right">
-                <button (click)="drawer.toggle()" id="btnclose">X</button> 
+                <button id="close" class="btnOpenClose" mat-icon-button>
+                    <mat-icon>menu</mat-icon>
+                </button>
             </div>
-            <div mat-raised-button matTooltip="Pagina inicial" >
-            <a mat-list-item [routerLink]="['home']">
-                <i class="material-icons">home</i>
-                Início
-            </a>
+            <div mat-raised-button matTooltip="Pagina inicial">
+                <a mat-list-item [routerLink]="['home']">
+                    <i class="material-icons">home</i>
+                    Início
+                </a>
             </div>
             <!-- <a mat-list-item [routerLink]="['colaboradores']">
                 <i class="material-icons">account_circle</i>
@@ -40,31 +42,34 @@
                     <i class="material-icons"><span class="material-symbols-outlined">
                             switch_access_shortcut
                         </span></i>
-                    Criar novo Serviço
+                    Novo Estabelecimento
                 </a>
             </div>
-        <!-- <mat-nav-list class="nav-list">
+            <!-- <mat-nav-list class="nav-list">
             <a mat-list-item href="https://github.com/TonnyJames" target="_blank">
                 <i class="material-icons">code</i>
                 Github
             </a>
         </mat-nav-list> -->
-        <div mat-raised-button matTooltip="Finalizar sua sessão no app">
-            <a mat-list-item (click)=logout()>
-                <i class="material-icons">logout</i>
-                Sair
-            </a>
-        </div>
+            <div mat-raised-button matTooltip="Finalizar sua sessão no app">
+                <a mat-list-item (click)=logout()>
+                    <i class="material-icons">logout</i>
+                    Sair
+                </a>
+            </div>
         </mat-nav-list>
     </mat-drawer>
 
     <div class="sidenav-content">
-        <app-header></app-header>
-        <button class="menu mat-elevation-z8" (click)="drawer.toggle()" mat-icon-button>
-            <mat-icon>menu</mat-icon>
-        </button>
+            <app-header></app-header>
+            <button id="open" class="btnOpenClose" (click)="drawer.toggle()" mat-icon-button>
+                <mat-icon>menu</mat-icon>
+            </button>
+        <div class="nmUsuario">
+            <p>Olá:<input class="inputNome" matInput disabled [(ngModel)]="nmUsuario" name="nmUsuario"></p>
+        </div>
+
         <router-outlet></router-outlet>
     </div>
 
 </mat-sidenav-container>
-
