@@ -3,8 +3,6 @@ import { ServicoService } from './../../../services/servico.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { Cliente } from 'src/app/models/cliente';
-import { ClienteService } from 'src/app/services/cliente.service';
 
 @Component({
   selector: 'app-servico-list',
@@ -14,7 +12,7 @@ import { ClienteService } from 'src/app/services/cliente.service';
 export class ServicoListComponent implements OnInit {
   ELEMENT_DATA: Servico[] = []
 
-  displayedColumns: string[] = ['id', 'categoria', 'nmNegocio', 'telefone', 'email', 'nomeAdmin', 'acoes'];
+  displayedColumns: string[] = ['nmNegocio','categoria', 'acoes'];
   dataSource = new MatTableDataSource<Servico>(this.ELEMENT_DATA);
 
   @ViewChild(MatPaginator) paginator: MatPaginator;

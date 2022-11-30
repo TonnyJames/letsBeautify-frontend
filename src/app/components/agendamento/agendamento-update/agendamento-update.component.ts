@@ -11,7 +11,6 @@ import { Colaborador } from 'src/app/models/colaborador';
 import { AgendamentoService } from 'src/app/services/agendamento.service';
 import { ClienteService } from 'src/app/services/cliente.service';
 import { ColaboradorService } from 'src/app/services/colaborador.service';
-import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-agendamento-update',
