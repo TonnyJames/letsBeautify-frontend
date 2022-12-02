@@ -1,11 +1,14 @@
-mat-card {
-    width: 100%;
-    background-color: black;
+.container {
+    display: flex;
+    justify-content: center;
+    margin: auto auto 3rem auto;
+    width : 100%;
+    margin: auto;
 }
 
-.container {
-    width : 80%;
-    margin: auto;
+mat-card {
+    width: 80%;
+    background-color: black;
 }
 
 table {
