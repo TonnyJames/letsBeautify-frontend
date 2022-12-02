@@ -1,5 +1,7 @@
 mat-card {
     width: 100%;
+    justify-content: center;
+    margin: auto auto 3rem auto;;
 }
 
 #fullwidth {
@@ -17,7 +19,7 @@ body {
     display          : flex;
     grid-auto-flow   : column;
     grid-auto-columns: 1fr;
-    padding          : 2px 10px;
+    /* padding          : 2px 10px; */
     text-align       : center;
     height           : 15rem;
     width            : 95%;
