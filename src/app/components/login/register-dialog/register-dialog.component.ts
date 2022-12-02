@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
@@ -9,13 +10,15 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class RegisterDialogComponent implements OnInit {
 
   constructor(
-    public dialogRef: MatDialogRef<RegisterDialogComponent>) {}
+    public dialogRef: MatDialogRef<RegisterDialogComponent>,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
 
   onNoClick(): void {
-    this.dialogRef.close();
+      this.dialogRef.close();
+      this.router.navigate(['../registrarcliente'])
   }
-
 }

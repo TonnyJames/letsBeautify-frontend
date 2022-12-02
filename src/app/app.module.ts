@@ -29,6 +29,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
+import {MatTooltipModule} from '@angular/material/tooltip';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
 import { NgxMaskModule } from 'ngx-mask';
@@ -51,11 +52,19 @@ import { AgendamentoListComponent } from './components/agendamento/agendamento-l
 import { AgendamentoCreateComponent } from './components/agendamento/agendamento-create/agendamento-create.component';
 import { AgendamentoUpdateComponent } from './components/agendamento/agendamento-update/agendamento-update.component';
 import { AgendamentoReadComponent } from './components/agendamento/agendamento-read/agendamento-read.component';
-
-//Import Moment
-import * as moment from 'moment';
-import { SignupComponent } from './components/signup/signup.component';
+import { RegistrarClienteComponent } from './components/registar-button/registrar-cliente/registrar-cliente.component';
+import { ServicoCreateComponent} from './components/servico/servico-create/servico-create.component';
 import { RegisterDialogComponent } from './components/login/register-dialog/register-dialog.component';
+import { ConsultaComponent } from './components/api-relatorio/consulta/consulta.component';
+import { ConsultaListComponent } from './components/api-relatorio/consulta-list/consulta-list.component';
+import { ServicoListComponent } from './components/servico/servico-list/servico-list.component';
+
+
+
+//guardas de rotas
+import { AuthGuard } from './auth/auth.guard';
+import { ServicoReadComponent } from './components/servico/servico-read/servico-read.component';
+
 
 @NgModule({
   declarations: [
@@ -68,7 +77,6 @@ import { RegisterDialogComponent } from './components/login/register-dialog/regi
     ColaboradorCreateComponent,
     ColaboradorUpdateComponent,
     ColaboradorDeleteComponent,
-
     ClienteCreateComponent,
     ClienteDeleteComponent,
     ClienteListComponent,
@@ -77,8 +85,13 @@ import { RegisterDialogComponent } from './components/login/register-dialog/regi
     AgendamentoListComponent,
     AgendamentoReadComponent,
     AgendamentoUpdateComponent,
-    SignupComponent,
+    RegistrarClienteComponent,
     RegisterDialogComponent,
+    ServicoCreateComponent,
+    ConsultaComponent,
+    ConsultaListComponent,
+    ServicoListComponent,
+    ServicoReadComponent
   ],
   imports: [
     MatDialogModule,
@@ -106,6 +119,7 @@ import { RegisterDialogComponent } from './components/login/register-dialog/regi
         MatIconModule,
         MatListModule,
         MatCardModule,
+        MatTooltipModule,
         MatDatepickerModule,
         MatNativeDateModule,
         ToastrModule.forRoot({
@@ -115,7 +129,7 @@ import { RegisterDialogComponent } from './components/login/register-dialog/regi
         }),
         NgxMaskModule.forRoot()
   ],
-  providers: [AuthInterceptorProvider],
+  providers: [AuthInterceptorProvider, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

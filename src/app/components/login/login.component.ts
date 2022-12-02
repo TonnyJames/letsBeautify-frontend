@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
 
   logar() {
     this.service.authenticate(this.creds).subscribe(resposta => {
-      this.service.successFulLogin(resposta.headers.get('Authorization').substring(7));
+      this.service.successFulLogin(resposta.headers.get('Authorization').substring(7), resposta.headers.get('Id'));
       this.router.navigate(['home'])
     },
       () => {

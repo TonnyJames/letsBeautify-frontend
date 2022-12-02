@@ -15,6 +15,9 @@ export class AgendamentoService {
     return this.http.get<Agendamento>(`${API_CONFIG.baseUrl}/agendamentos/${id}`)
   }
 
+  findByCpf(cpf: string): Observable<Agendamento[]>{
+    return this.http.get<Agendamento[]>(`${API_CONFIG.baseUrl}/agendamentos/cpf/${cpf}`)
+  }
 
   findAll(): Observable<Agendamento[]> {
     return this.http.get<Agendamento[]>(`${API_CONFIG.baseUrl}/agendamentos`);

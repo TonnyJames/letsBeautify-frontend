@@ -19,10 +19,12 @@ export class AgendamentoReadComponent implements OnInit {
     // status:      '',
     titulo:      '',
     observacoes:   '',
-    colaborador:     '',
     cliente:     '',
+    // colaborador:     '',
+    servico: '',
     nomeCliente: '',
-    nomeColaborador: ''
+    nomeColaborador: '',
+    nomeServico: ''
   }
 
   constructor(
@@ -39,6 +41,7 @@ export class AgendamentoReadComponent implements OnInit {
   findById(): void{
     this.agendamentoService.findById(this.agendamento.id).subscribe(resposta => {
       this.agendamento = resposta;
+      this.agendamento.horaAgendada = this.retornaHorario(resposta.horaAgendada)
     }, ex => {
       this.toastService.error(ex.console.error.error);
     })
@@ -59,6 +62,16 @@ return '14:00 às 15:00'
 return '15:00 às 16:00'
 }
 }
+
+  // retornaStatus(status: any): string {
+  //   if (status == '0') {
+  //     return 'Aberto'
+  //   } else if (status == 1) {
+  //     return 'Em andamento'
+  //   } else {
+  //     return 'Encerrado'
+  //   }
+  // }
 
   // retornaStatus(status: any): string {
   //   if (status == '0') {

@@ -1,3 +1,5 @@
+import { Servico } from 'src/app/models/servico';
+import { ServicoService } from './../../../services/servico.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -17,33 +19,36 @@ import { ColaboradorService } from 'src/app/services/colaborador.service';
 })
 export class AgendamentoUpdateComponent implements OnInit {
   clientes: Cliente[] = []
-  colaboradors: Colaborador[] = []
+  colaboradores: Colaborador[] = []
   agendamento: Agendamento = {
-
     titulo:      '',
     dataAgendada: '',
     horaAgendada:'',
     // prioridade:  '',
     // status:      '',
     observacoes:   '',
-    colaborador:     '',
     cliente:     '',
+    // colaborador:     '',
+    servico: '',
     nomeCliente: '',
-    nomeColaborador: ''
+    nomeColaborador: '',
+    nomeServico: ''
   }
 
   titulo:     FormControl = new FormControl(null, [Validators.required])
   dataAgendada: FormControl = new FormControl(null, [Validators.required])
   horaAgendada: FormControl = new FormControl(null, [Validators.required])
-  observacoes:  FormControl = new FormControl(null, [Validators.required])
-  colaborador:    FormControl = new FormControl(null, [Validators.required])
-  cliente:    FormControl = new FormControl(null, [Validators.required])
+  // observacoes:  FormControl = new FormControl(null, [Validators.required])
+  // colaborador:    FormControl = new FormControl(null, [Validators.required])
+  // cliente:    FormControl = new FormControl(null, [Validators.required])
+  // servico: FormControl = new FormControl(null, [Validators.required])
 
 
   constructor(
     private agendamentoService: AgendamentoService,
     private clienteService: ClienteService,
     private colaboradorService: ColaboradorService,
+    private servicoService: ServicoService,
     private toastService:   ToastrService,
     private route:          ActivatedRoute,
     private router:         Router
@@ -51,12 +56,13 @@ export class AgendamentoUpdateComponent implements OnInit {
 
   ngOnInit(): void {
     this.agendamento.id = this.route.snapshot.paramMap.get('id');
-    this.findById();
-    this.findAllClientes();
-    this.findAllColaboradors();
+    this.findAgendamentoById();
+    // this.findAllServicos();
+    // this.findAllClientes();
+    // this.findAllColaboradors();
   }
 
-  findById(): void{
+  findAgendamentoById(): void{
     this.agendamentoService.findById(this.agendamento.id).subscribe(resposta => {
       this.agendamento = resposta;
     }, ex => {
@@ -83,18 +89,23 @@ export class AgendamentoUpdateComponent implements OnInit {
 
   findAllColaboradors(): void {
     this.colaboradorService.findAll().subscribe(resposta => {
-      this.colaboradors = resposta
+      this.colaboradores = resposta
     })
   }
 
+  findAllServicos() {
+    this.servicoService.findAll().subscribe(resposta => {
+      // this.servico = resposta
+    })
+  }
 
   validaCampos(): boolean{
     return this.dataAgendada.valid
     && this.horaAgendada.valid
     && this.titulo.valid
-    && this.observacoes.valid
-    && this.colaborador.valid
-    && this.cliente.valid
+    // && this.observacoes.valid
+    // && this.cliente.valid
+    // && this.servico.valid
   }
 
   retornaHorario(horario: any): string {

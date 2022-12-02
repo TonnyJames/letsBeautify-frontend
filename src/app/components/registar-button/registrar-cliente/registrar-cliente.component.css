@@ -1,0 +1,64 @@
+.container {
+    height:100%;
+    background: linear-gradient(174deg, rgba(43,34,35,1) 42%, rgba(173,23,40,1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    width: 35rem;
+    margin: auto;
+    padding: 1rem, 1rem, 3rem, 1rem;
+    border-radius: .6rem;
+    background: white;
+}
+
+.fullwidth {
+    width: 100%;
+}
+
+h1{
+    margin-top: 2rem;
+    text-align: center;
+    padding-top: 2rem;
+}
+
+img {
+    height: 12rem;
+    margin: auto;
+}
+.section {
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    margin-top: .5rem;
+}
+
+p {
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+mat-icon {
+    opacity: .6;
+}
+
+.sign {
+    
+    text-align: center;
+    margin: 0;
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+    opacity: 60%;
+}
+
+.sign a {
+    text-decoration: none;
+    color: maroon;
+}

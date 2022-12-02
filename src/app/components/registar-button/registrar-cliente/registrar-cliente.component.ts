@@ -6,11 +6,11 @@ import { Cliente } from 'src/app/models/cliente';
 import { ClienteService } from 'src/app/services/cliente.service';
 
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  selector: 'app-registrar-cliente',
+  templateUrl: './registrar-cliente.component.html',
+  styleUrls: ['./registrar-cliente.component.css']
 })
-export class SignupComponent implements OnInit {
+export class RegistrarClienteComponent implements OnInit {
 
   cliente: Cliente = {
     id: '',
@@ -44,7 +44,7 @@ export class SignupComponent implements OnInit {
   create(): void {
     this.service.create(this.cliente).subscribe(() => {
       this.toast.success('Você foi registrado com sucesso', 'Cadastro');
-      this.router.navigate(['../'])
+      this.router.navigate(['/login'])
     }), ex => {
       if(ex.error.errors){
         ex.error.errors.fotEach(element =>{

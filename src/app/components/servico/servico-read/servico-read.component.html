@@ -1,0 +1,52 @@
+<div class="container mat-elevation-z8">
+  <form action="" class="form">
+    <h1 class="fullwidth">Serviço</h1>
+    <!-- <img class="fullwidth" src="assets/img/faders.png" alt="image-create"> -->
+
+    <mat-form-field class="fullwidth" appearance="legacy">
+      <mat-label>Categoria:</mat-label>
+      <input [disabled]="true" [(ngModel)]="servico.categoria" name="categoria" matInput>
+      <mat-icon matSuffix>category</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="fullwidth" appearance="legacy">
+      <mat-label>Nome:</mat-label>
+      <input [disabled]="true" [(ngModel)]="servico.nmNegocio" name="nmNegocio" matInput>
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="fullwidth" appearance="legacy">
+      <mat-label>Nº Inscrição:</mat-label>
+      <input [disabled]="true" [(ngModel)]="servico.nrInsc" name="nrInsc" matInput>
+      <mat-icon matSuffix>pin</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="fullwidth" appearance="legacy">
+      <mat-label>Telefone:</mat-label>
+      <input [disabled]="true" [(ngModel)]="servico.telefone" name="telefone" matInput>
+      <mat-icon matSuffix>phone_in_talk</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="fullwidth" appearance="legacy">
+      <mat-label>Email:</mat-label>
+      <input [disabled]="true" [(ngModel)]="servico.email" name="email" matInput>
+      <mat-icon matSuffix>email</mat-icon>
+    </mat-form-field>
+
+      <mat-form-field class="fullwidth" appearance="outline">
+        <mat-label>Data de Inscrição</mat-label>
+        <input [disabled]="true" [(ngModel)]="servico.dataCriacao" name="dataAgendada" matInput>
+      </mat-form-field>
+
+      <mat-form-field class="fullwidth" appearance="outline">
+        <mat-label>Responsável</mat-label>
+        <input [disabled]="true" [(ngModel)]="servico.nomeAdmin" name="nomeAdmin" matInput>
+      </mat-form-field>
+  </form>
+
+  <button mat-stroked-button routerLink = "../../../agendamentos/create/{{servico.id}}"  class="fullwidth" mat-elevation-z4 mat-flat-button color="primary">Novo Agendamento</button>
+
+  <button [routerLink]="['../../']" class="fullwidth" mat-elevation-z4
+    mat-stroked-button color="warn">Voltar</button>
+  </div>
+  <p class="fullwidth sign"><a href="https://github.com/TonnyJames" target="_blank">Desenvolvido por: Tonny Reis</a></p>
