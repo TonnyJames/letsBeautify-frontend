@@ -32,7 +32,7 @@ img {
     display: flex;
     justify-content: center;
     margin: auto;
-    width            : 60%;
+    width            : 55%;
     /* margin-left   : auto; */
     /* padding-bottom: 2rem; */
     /* padding-top   : 1rem; */
@@ -64,7 +64,7 @@ mat-icon {
 }
 
 .link {
-    color: rgb(179, 179, 231);
+    color: rgb(68, 68, 209);
 }
 
 .link:hover {
@@ -82,7 +82,7 @@ mat-icon {
     text-align    : center;
     margin        : 0;
     margin-top    : 1rem;
-    opacity       : 60%;
+    opacity       : 70%;
 }
 
 .sign a {
